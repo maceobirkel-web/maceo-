@@ -1646,3 +1646,64 @@ fieldset.champ {
     border: 1px solid #000;
   }
 }
+
+/* ---------- Apparition au défilement (activée par main.js) ---------- */
+.anim-pret .apparait {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: var(--delai, 0s);
+}
+
+.anim-pret .apparait.est-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-pret .apparait {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Encadré avant / après : les lignes « Après » s'allument une à une */
+.anim-pret .comparatif__colonne--apres li {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.anim-pret .comparatif.est-visible .comparatif__colonne--apres li {
+  opacity: 1;
+  transform: none;
+}
+
+.anim-pret .comparatif.est-visible .comparatif__colonne--apres li:nth-child(1) { transition-delay: 0.5s; }
+.anim-pret .comparatif.est-visible .comparatif__colonne--apres li:nth-child(2) { transition-delay: 0.7s; }
+.anim-pret .comparatif.est-visible .comparatif__colonne--apres li:nth-child(3) { transition-delay: 0.9s; }
+.anim-pret .comparatif.est-visible .comparatif__colonne--apres li:nth-child(4) { transition-delay: 1.1s; }
+.anim-pret .comparatif.est-visible .comparatif__colonne--apres li:nth-child(5) { transition-delay: 1.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-pret .comparatif__colonne--apres li {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Cartes : léger soulèvement au survol */
+.carte,
+.tarif,
+.profil {
+  transition: transform 0.2s ease-out, border-color 0.2s;
+}
+
+@media (hover: hover) {
+  .carte:hover,
+  .tarif:hover,
+  .profil:hover {
+    transform: translateY(-4px);
+    border-color: var(--bleu);
+  }
+}

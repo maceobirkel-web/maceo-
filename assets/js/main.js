@@ -32,6 +32,32 @@
     });
   }
 
+  /* ---------- Apparition des blocs au défilement ---------- */
+  var reduit = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if ("IntersectionObserver" in window && !reduit) {
+    var groupes = [".comparatif", ".section__entete", ".grille-4 > *", ".tarifs > *", ".tarifs__notes > li",
+      ".etapes > li", ".paiement", ".grille-2 > *", ".offre", ".engagements > li", ".faq__item", ".formulaire", ".coordonnees"];
+    var blocs = [];
+    groupes.forEach(function (sel) {
+      document.querySelectorAll(sel).forEach(function (el, i) {
+        el.classList.add("apparait");
+        // décalage en cascade pour les éléments d'une même grille
+        if (sel.indexOf(">") !== -1) el.style.setProperty("--delai", Math.min(i, 5) * 0.08 + "s");
+        blocs.push(el);
+      });
+    });
+    var obs = new IntersectionObserver(function (entrees) {
+      entrees.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("est-visible");
+          obs.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.1 });
+    blocs.forEach(function (el) { obs.observe(el); });
+    document.documentElement.classList.add("anim-pret");
+  }
+
   /* ---------- 2. Formulaire de contact (Formspree) ---------- */
   var formulaire = document.getElementById("formulaire-contact");
   if (!formulaire || !window.fetch || !window.FormData) return;
