@@ -117,3 +117,17 @@ Ces points ne relèvent pas du site, mais ils conditionnent la validité des pag
 - Aucune dépendance externe chargée par le navigateur : pas de Google Fonts (police hébergée localement), pas d'outil de statistiques, pas de cookie. D'où l'absence de bandeau cookies.
 - Accessibilité : balises sémantiques, lien d'évitement, labels sur tous les champs, contrastes AA, FAQ en `<details>` natifs utilisables au clavier, menu mobile avec `aria-expanded`. Vérifié avec axe-core (0 erreur) et html-validate.
 - Sans JavaScript, le site reste utilisable : le menu s'affiche en entier et le formulaire s'envoie normalement vers Formspree.
+
+## 7. Photos d'arrière-plan (provisoires)
+
+Trois photos sont utilisées en fondu : en haut de page (`chalet-salon`), derrière l'offre de lancement
+(`piscine-jardin`) et derrière les questions (`chalet-poutres`). Elles sont dans `assets/img/photos/`,
+chacune en `.webp` (léger, utilisé en priorité) et en `.jpg` (secours).
+
+**Ce sont des photos d'essai.** Avant de rendre le site public, utilisez uniquement :
+- vos propres photos, ou celles d'un client qui vous a donné son accord **par écrit** ;
+- ou des photos libres de droits (Unsplash, Pexels), avec la mention « Photo d'illustration ».
+
+Pour remplacer une photo : gardez le même nom de fichier et remplacez les deux versions (`.jpg` et `.webp`).
+Taille conseillée : 1400 à 1800 px de large, moins de 400 Ko. Le cadrage se règle dans `style.css`
+(`background-position` des classes `.fond--accroche`, `.fond--piscine`, `.fond--poutres`).
