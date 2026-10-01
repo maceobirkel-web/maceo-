@@ -1,6 +1,6 @@
 # Studio Tourisme — site vitrine
 
-Site statique (HTML, CSS, un petit fichier JavaScript), sans framework ni outil de compilation.
+Site statique (HTML, CSS, quelques petits fichiers JavaScript), sans framework ni outil de compilation.
 Il s'héberge gratuitement sur Netlify, Vercel ou GitHub Pages.
 
 ## Contenu du dossier
@@ -9,17 +9,22 @@ Il s'héberge gratuitement sur Netlify, Vercel ou GitHub Pages.
 index.html              Page d'accueil (10 sections)
 mentions-legales.html   Mentions légales
 cgv.html                Conditions générales de vente (+ formulaire de rétractation)
+cgu.html                Conditions générales d'utilisation du site
 confidentialite.html    Politique de confidentialité (RGPD, cookies)
 404.html                Page « introuvable »
+_headers, _redirects    Sécurité (HTTPS, en-têtes) pour Netlify
+vercel.json             Même chose pour Vercel
+.htaccess               Même chose pour un hébergeur Apache (OVH, o2switch…)
 robots.txt, sitemap.xml Référencement
 .nojekyll               Utile pour GitHub Pages uniquement
 assets/
   css/style.css         Toute la mise en forme (couleurs en haut du fichier)
-  js/main.js            Menu mobile + envoi du formulaire
+  js/main.js            Menu mobile, vérification du formulaire, anti-spam, envoi
+  js/consentement.js    Bandeau cookies + mesure d'audience (GoatCounter)
   js/animations.js      Animations de la page d'accueil (défilement, titre, prix, étapes)
   js/vendor/            Bibliothèque d'animation GSAP, hébergée sur le site
   fonts/                Police DM Sans, hébergée sur le site (licence SIL OFL)
-  img/                  Favicon, icône Apple, image de partage (og-image.png)
+  img/                  Favicon, icône Apple, image de partage (og-image.jpg)
 ```
 
 Pour voir le site sur votre ordinateur : double-cliquez sur `index.html`.
@@ -40,13 +45,14 @@ Pour les retrouver, cherchez `a-completer`, `VOTRE-DOMAINE` et `VOTRE_ID_FORMSPR
 | `[ADRESSE POSTALE]` | mentions légales, CGV (2 fois), confidentialité | Avant la mise en ligne |
 | `[EN COURS]` (immatriculation RNE) | mentions légales | Remplacer par « Immatriculé au RNE » une fois inscrit |
 | `[NOM / ADRESSE / SITE DE L'HÉBERGEUR]` | mentions légales, confidentialité | Après le choix de l'hébergeur (adresses en commentaire dans le fichier) |
-| `[NOM DE DOMAINE]` + `VOTRE-DOMAINE.fr` | mentions légales, balises SEO des 4 pages, `robots.txt`, `sitemap.xml` | Après l'achat du domaine |
-| `[DATE DE MISE EN LIGNE]` | les 3 pages légales | Le jour de la publication |
+| `[NOM DE DOMAINE]` + `VOTRE-DOMAINE.fr` | mentions légales, balises SEO des 5 pages, `robots.txt`, `sitemap.xml` | Après l'achat du domaine |
+| `[DATE DE MISE EN LIGNE]` | les 4 pages légales | Le jour de la publication |
 | `[MÉDIATEUR DE LA CONSOMMATION]` | CGV, article 19 | **Obligatoire** avant de vendre à des particuliers |
 | `[AUTRES MOYENS DE PAIEMENT]` | CGV, article 6 | Supprimez la mention si vous n'acceptez que le virement |
 | `[NOMS DES OUTILS UTILISÉS]` (IA) | confidentialité, section 3 | Avant la mise en ligne |
 | `Instagram : [À DÉFINIR]` | accueil, section Contact | Instructions en commentaire juste au-dessus de la ligne |
 | `VOTRE_ID_FORMSPREE` | accueil, formulaire | Voir la partie 2 |
+| `VOTRE_CODE_GOATCOUNTER` | `assets/js/consentement.js`, ligne 9 | Voir la partie 2 bis |
 
 > Adresse : en micro-entreprise, l'adresse publiée est celle de votre siège. Si vous ne souhaitez pas
 > afficher votre adresse personnelle, vous pouvez recourir à une société de domiciliation.
@@ -71,6 +77,17 @@ Réglages conseillés dans l'onglet **Settings** du formulaire :
 
 L'offre gratuite de Formspree est limitée en nombre d'envois par mois (environ 50, vérifiez sur leur page *Pricing*). C'est largement suffisant pour démarrer.
 
+## 2 bis. Activer la mesure d'audience (GoatCounter, gratuit)
+
+GoatCounter compte les visites sans cookie et sans suivre les visiteurs. Il ne se lance que si le visiteur clique sur « Accepter » dans le bandeau.
+
+1. Allez sur **https://www.goatcounter.com** et cliquez sur **Sign up**.
+2. Choisissez un code, par exemple `studio-tourisme` : vos statistiques seront sur `https://studio-tourisme.goatcounter.com`.
+3. Ouvrez `assets/js/consentement.js`, remplacez `VOTRE_CODE_GOATCOUNTER` par ce code (entre les guillemets).
+4. Mettez le site en ligne, acceptez le bandeau, visitez quelques pages : elles apparaissent dans votre tableau de bord GoatCounter.
+
+Tant que le code n'est pas rempli, le bandeau s'affiche mais rien n'est chargé.
+
 ## 3. Mettre le site en ligne
 
 **Option la plus simple : Netlify Drop**
@@ -83,10 +100,15 @@ L'offre gratuite de Formspree est limitée en nombre d'envois par mois (environ 
 **GitHub Pages** : dans le dépôt GitHub, *Settings > Pages > Source : Deploy from a branch*, choisissez la branche et le dossier `/ (root)`.
 Avec l'adresse par défaut `utilisateur.github.io/nom-du-depot/`, la page 404 s'affichera sans mise en forme : ce n'est plus le cas une fois un nom de domaine relié.
 
+**HTTPS forcé** : Netlify, Vercel et GitHub Pages fournissent le certificat gratuitement.
+Sur GitHub Pages, cochez **Enforce HTTPS** dans *Settings > Pages*. Sur Netlify et Vercel, c'est automatique.
+Les fichiers `_headers` (Netlify), `vercel.json` (Vercel) et `.htaccess` (Apache) ajoutent les en-têtes de sécurité
+(HSTS, politique de sécurité du contenu, protection contre l'affichage du site dans un cadre). GitHub Pages ne permet pas ces en-têtes.
+
 Après la mise en ligne :
 - remplacez `VOTRE-DOMAINE.fr` partout (4 pages, `robots.txt`, `sitemap.xml`) ;
 - complétez l'hébergeur dans les mentions légales et la politique de confidentialité ;
-- testez le partage du lien (WhatsApp, LinkedIn) : l'image `assets/img/og-image.png` doit apparaître ;
+- testez le partage du lien (WhatsApp, LinkedIn) : l'image `assets/img/og-image.jpg` doit apparaître ;
 - déclarez le site sur Google Search Console et envoyez le `sitemap.xml`.
 
 ## 4. Activer les avis clients (plus tard)
@@ -118,6 +140,9 @@ Ces points ne relèvent pas du site, mais ils conditionnent la validité des pag
 
 ## Choix techniques
 
-- Aucune dépendance externe chargée par le navigateur : DM Sans vient de Google Fonts mais le fichier est hébergé sur le site (pas d'appel aux serveurs de Google, donc pas de transfert de l'adresse IP des visiteurs), pas d'outil de statistiques, pas de cookie. D'où l'absence de bandeau cookies.
+- Aucune dépendance externe chargée sans accord : DM Sans et GSAP sont hébergés sur le site (pas d'appel à Google). Seul GoatCounter est externe, et uniquement après « Accepter ». Le choix est mémorisé 6 mois dans le navigateur (pas de cookie) ; le lien « Gérer les cookies » en bas de page permet de changer d'avis.
+- Formulaire : vérification de chaque champ avec un message en français, champ piège anti-robots (`_gotcha`) et délai minimum de 3 secondes avant l'envoi. Formspree ajoute son propre filtre anti-spam.
+- Aucune clé secrète dans les fichiers du site : l'identifiant Formspree et le code GoatCounter sont publics par nature.
+- Vitesse mesurée avec Lighthouse le 2026-10-01 (page d'accueil) : 95/100 sur mobile, 100/100 sur ordinateur ; accessibilité, bonnes pratiques et SEO : 100/100.
 - Accessibilité : balises sémantiques, lien d'évitement, labels sur tous les champs, contrastes AA, FAQ en `<details>` natifs utilisables au clavier, menu mobile avec `aria-expanded`. Vérifié avec axe-core (0 erreur) et html-validate.
 - Sans JavaScript, le site reste utilisable : le menu s'affiche en entier, tout le contenu est visible sans animation et le formulaire s'envoie normalement vers Formspree.

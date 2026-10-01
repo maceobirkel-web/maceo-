@@ -1,0 +1,5 @@
+# Netlify : ces fichiers internes ne doivent pas être consultables en ligne
+/CLAUDE.md   /404.html   404!
+/README.md   /404.html   404!
+/.mcp.json   /404.html   404!
+/.claude/*   /404.html   404!

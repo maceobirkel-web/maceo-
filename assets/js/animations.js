@@ -58,7 +58,8 @@
     intro
       .from(".accroche .section__surtitre", { autoAlpha: 0, y: 16, duration: 0.6 })
       .from(".accroche__titre .mot", { autoAlpha: 0, y: 40, rotateX: -35, duration: 0.9, stagger: 0.05 }, "-=0.3")
-      .from(".accroche__sous-titre", { autoAlpha: 0, y: 20, duration: 0.7 }, "-=0.6")
+      /* Le sous-titre reste visible dès l'affichage (plus grand texte de l'écran : chargement perçu plus rapide) */
+      .from(".accroche__sous-titre", { y: 20, duration: 0.9 }, 0)
       .from(".accroche__actions .bouton", { autoAlpha: 0, y: 16, duration: 0.6, stagger: 0.08 }, "-=0.5")
       .from(".accroche__note", { autoAlpha: 0, y: 12, duration: 0.6 }, "-=0.4")
       .from(".comparatif", { autoAlpha: 0, y: 48, scale: 0.96, duration: 1.1 }, 0.35)
