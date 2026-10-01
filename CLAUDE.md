@@ -10,3 +10,6 @@
 - Règles qui restent obligatoires (loi et engagement commercial) : aucun faux avis, faux chiffre ni image
   de logement inventée ; une animation ou une vidéo n'ajoute jamais rien qui n'existe pas dans le logement ;
   uniquement des photos dont l'utilisateur a les droits ; accessibilité (contrastes, mouvement réduit).
+- Composants d'interface : le serveur MCP 21st (21st.dev, configuré dans `.mcp.json`, clé dans la variable
+  `API_KEY_21ST`) peut servir d'inspiration et de source de composants. Ils sont en React/Tailwind :
+  les adapter en HTML/CSS statique, sans ajouter de framework.
