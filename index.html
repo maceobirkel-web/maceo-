@@ -28,9 +28,9 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <meta name="theme-color" content="#1F4FD1">
+  <meta name="theme-color" content="#0369A1">
 
-  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Données structurées : aucune note ni aucun avis déclaré (à ajouter uniquement avec de vrais avis) -->
@@ -61,6 +61,7 @@
 </head>
 <body>
   <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+  <div class="progression" aria-hidden="true"></div>
 
   <!-- Icônes SVG (lignes droites, réutilisées dans la page) -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -108,10 +109,11 @@
 
     <!-- ========== 2. ACCROCHE ========== -->
     <section class="accroche" id="haut" aria-labelledby="titre-accroche">
+      <div class="aurore" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="conteneur accroche__grille">
         <div>
           <p class="section__surtitre">Location courte durée · Haute-Savoie et Savoie</p>
-          <h1 class="accroche__titre" id="titre-accroche">Des annonces qui se louent mieux, à partir de vos photos actuelles.</h1>
+          <h1 class="accroche__titre" id="titre-accroche">Des annonces qui se louent mieux, à partir de <span class="accent">vos photos actuelles.</span></h1>
           <p class="accroche__sous-titre">Nous créons une vidéo IA à partir des photos de votre annonce, nous retouchons vos photos et nous réécrivons votre texte. Tout se fait à distance : pas de tournage, pas de déplacement.</p>
           <div class="accroche__actions">
             <a class="bouton" href="#contact">Demander un audit gratuit</a>
@@ -147,6 +149,14 @@
         </div>
       </div>
     </section>
+
+    <!-- Bandeau décoratif des zones couvertes (le texte figure aussi dans « Pour qui ») -->
+    <div class="bandeau" aria-hidden="true">
+      <div class="bandeau__piste">
+        <ul><li>Aravis</li><li>Le Grand-Bornand</li><li>La Clusaz</li><li>Lac d'Annecy</li><li>Aix-les-Bains</li><li>Chambéry</li><li>Haute-Savoie</li><li>Savoie</li></ul>
+        <ul><li>Aravis</li><li>Le Grand-Bornand</li><li>La Clusaz</li><li>Lac d'Annecy</li><li>Aix-les-Bains</li><li>Chambéry</li><li>Haute-Savoie</li><li>Savoie</li></ul>
+      </div>
+    </div>
 
     <!-- ========== 3. CE QUE NOUS FAISONS ========== -->
     <section class="section section--grise" id="services" aria-labelledby="titre-services">
@@ -562,5 +572,9 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <!-- Animations : GSAP (hébergé sur le site, licence standard GSAP) -->
+  <script src="assets/js/vendor/gsap.min.js" defer></script>
+  <script src="assets/js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
 </body>
 </html>

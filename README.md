@@ -16,13 +16,15 @@ robots.txt, sitemap.xml Référencement
 assets/
   css/style.css         Toute la mise en forme (couleurs en haut du fichier)
   js/main.js            Menu mobile + envoi du formulaire
-  fonts/                Police IBM Plex Sans, hébergée sur le site (licence SIL OFL)
+  js/animations.js      Animations de la page d'accueil (défilement, titre, prix, étapes)
+  js/vendor/            Bibliothèque d'animation GSAP, hébergée sur le site
+  fonts/                Police DM Sans, hébergée sur le site (licence SIL OFL)
   img/                  Favicon, icône Apple, image de partage (og-image.png)
 ```
 
 Pour voir le site sur votre ordinateur : double-cliquez sur `index.html`.
 (Le formulaire ne s'envoie réellement qu'une fois le site en ligne et Formspree configuré.
-En ouvrant le fichier directement, certains navigateurs affichent une police de secours : c'est normal, IBM Plex Sans s'affiche une fois le site en ligne.)
+En ouvrant le fichier directement, certains navigateurs affichent une police de secours : c'est normal, DM Sans s'affiche une fois le site en ligne.)
 
 ---
 
@@ -99,7 +101,8 @@ Les règles sont rappelées en commentaire. En résumé :
 ## 5. Modifier le site
 
 - **Textes** : directement dans les fichiers `.html`, avec n'importe quel éditeur (VS Code recommandé).
-- **Couleurs** : variables en haut de `assets/css/style.css` (`--bleu`, `--noir`, etc.).
+- **Couleurs** : variables en haut de `assets/css/style.css` (`--ciel`, `--bleu`, `--orange`, `--titre`, etc.). Le design suit le skill ui-ux-pro-max (style « Aurora UI »), voir `CLAUDE.md`.
+- **Animations** : `assets/js/animations.js`. Elles se coupent d'elles-mêmes si le visiteur a activé « réduire les animations » sur son téléphone ou son ordinateur.
 - **Prix** : section `id="tarifs"` et tableau de l'offre de lancement dans `index.html`. Pensez aussi aux CGV si le contenu d'un pack change.
 - **Fin de l'offre de lancement** : supprimez le bloc `<div class="offre">…</div>` dans la section `id="engagements"`, et le paragraphe « Offre de lancement » de l'article 5 des CGV.
 
@@ -115,6 +118,6 @@ Ces points ne relèvent pas du site, mais ils conditionnent la validité des pag
 
 ## Choix techniques
 
-- Aucune dépendance externe chargée par le navigateur : IBM Plex Sans vient de Google Fonts mais le fichier est hébergé sur le site (pas d'appel aux serveurs de Google, donc pas de transfert de l'adresse IP des visiteurs), pas d'outil de statistiques, pas de cookie. D'où l'absence de bandeau cookies.
+- Aucune dépendance externe chargée par le navigateur : DM Sans vient de Google Fonts mais le fichier est hébergé sur le site (pas d'appel aux serveurs de Google, donc pas de transfert de l'adresse IP des visiteurs), pas d'outil de statistiques, pas de cookie. D'où l'absence de bandeau cookies.
 - Accessibilité : balises sémantiques, lien d'évitement, labels sur tous les champs, contrastes AA, FAQ en `<details>` natifs utilisables au clavier, menu mobile avec `aria-expanded`. Vérifié avec axe-core (0 erreur) et html-validate.
-- Sans JavaScript, le site reste utilisable : le menu s'affiche en entier et le formulaire s'envoie normalement vers Formspree.
+- Sans JavaScript, le site reste utilisable : le menu s'affiche en entier, tout le contenu est visible sans animation et le formulaire s'envoie normalement vers Formspree.
