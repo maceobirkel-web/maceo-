@@ -2589,6 +2589,70 @@ html:not(.js) .progression {
   -webkit-text-fill-color: transparent;
 }
 
+/* ---------- Vos photos : explications et conseils ---------- */
+.grille-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 960px) {
+  .grille-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .grille-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.carte h4 {
+  margin: 0 0 8px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--titre);
+  letter-spacing: -0.02em;
+}
+
+.grille-3 .carte p {
+  margin-bottom: 0;
+}
+
+.liste-coches--non svg {
+  color: #B91C1C;
+}
+
+.photos__note {
+  margin: 20px 0 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--gris-clair);
+  color: var(--titre);
+  font-size: 0.9375rem;
+}
+
+.photos__titre {
+  margin: 72px 0 24px;
+  font-size: clamp(1.375rem, 2.4vw, 1.75rem);
+}
+
+.encart {
+  margin: 32px 0 0;
+  padding: 18px 22px;
+  border-radius: 16px;
+  border: 1px solid #FED7AA;
+  background: #FFF7ED;
+  color: #431407;
+  font-size: 0.9875rem;
+}
+
+.encart strong {
+  color: var(--orange-fonce);
+}
+
 /* ---------- Mouvement réduit : tout est figé et lisible ---------- */
 @media (prefers-reduced-motion: reduce) {
   .aurore span,

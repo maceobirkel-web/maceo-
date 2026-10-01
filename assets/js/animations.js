@@ -86,6 +86,8 @@
     /* Grilles : apparition en cascade (Stagger List du skill) */
     var cascades = [
       ".grille-4 .carte",
+      ".grille-3 .carte",
+      ".photos__colonne",
       ".tarifs .tarif",
       ".tarifs__notes li",
       "#pour-qui .profil",
@@ -95,17 +97,24 @@
       ".coordonnees li"
     ];
     cascades.forEach(function (selecteur) {
-      var elements = gsap.utils.toArray(selecteur);
-      if (!elements.length) return;
-      gsap.from(elements, {
-        autoAlpha: 0,
-        y: 28,
-        scale: 0.96,
-        duration: 0.55,
-        stagger: { each: 0.08, from: "start" },
-        ease: "back.out(1.4)",
-        clearProps: "transform",
-        scrollTrigger: { trigger: elements[0], start: "top 88%" }
+      /* Une cascade par conteneur, déclenchée quand ce conteneur arrive à l'écran */
+      var groupes = new Map();
+      gsap.utils.toArray(selecteur).forEach(function (el) {
+        var parent = el.parentElement;
+        if (!groupes.has(parent)) groupes.set(parent, []);
+        groupes.get(parent).push(el);
+      });
+      groupes.forEach(function (elements) {
+        gsap.from(elements, {
+          autoAlpha: 0,
+          y: 28,
+          scale: 0.96,
+          duration: 0.55,
+          stagger: { each: 0.08, from: "start" },
+          ease: "back.out(1.4)",
+          clearProps: "transform",
+          scrollTrigger: { trigger: elements[0], start: "top 88%" }
+        });
       });
     });
 
