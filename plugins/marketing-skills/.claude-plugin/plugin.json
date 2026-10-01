@@ -1,0 +1,10 @@
+{
+  "name": "marketing-skills",
+  "version": "0.1.0",
+  "description": "Marketing skills for copywriting, brand voice, SEO, social media, email, launches and competitor research",
+  "author": {
+    "name": "Maceo Birkel"
+  },
+  "keywords": ["marketing", "copywriting", "seo", "social-media", "email", "launch"],
+  "license": "MIT"
+}

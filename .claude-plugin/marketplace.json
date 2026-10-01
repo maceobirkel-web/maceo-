@@ -1,0 +1,19 @@
+{
+  "name": "maceo-plugins",
+  "owner": {
+    "name": "Maceo Birkel"
+  },
+  "metadata": {
+    "description": "Claude Code plugins by Maceo Birkel"
+  },
+  "plugins": [
+    {
+      "name": "marketing-skills",
+      "source": "./plugins/marketing-skills",
+      "description": "Marketing skills for copywriting, brand voice, SEO, social media, email, launches and competitor research",
+      "version": "0.1.0",
+      "category": "marketing",
+      "keywords": ["marketing", "copywriting", "seo", "social-media", "email", "launch"]
+    }
+  ]
+}
