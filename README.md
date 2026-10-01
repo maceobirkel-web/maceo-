@@ -101,7 +101,7 @@ Les règles sont rappelées en commentaire. En résumé :
 ## 5. Modifier le site
 
 - **Textes** : directement dans les fichiers `.html`, avec n'importe quel éditeur (VS Code recommandé).
-- **Couleurs** : variables en haut de `assets/css/style.css` (`--ciel`, `--bleu`, `--orange`, `--titre`, etc.). Le design suit le skill ui-ux-pro-max (style « Aurora UI »), voir `CLAUDE.md`.
+- **Couleurs** : thème sombre « nuit et ambre » (fond noir chaud, accents ambre et or). Variables en haut de `assets/css/style.css` (`--fond`, `--surface`, `--orange`, `--titre`, etc. ; certains noms comme `--bleu` sont historiques et contiennent désormais de l’ambre). Le design suit le skill ui-ux-pro-max, voir `CLAUDE.md`.
 - **Animations** : `assets/js/animations.js`. Elles se coupent d'elles-mêmes si le visiteur a activé « réduire les animations » sur son téléphone ou son ordinateur.
 - **Prix** : section `id="tarifs"` et tableau de l'offre de lancement dans `index.html`. Pensez aussi aux CGV si le contenu d'un pack change.
 - **Fin de l'offre de lancement** : supprimez le bloc `<div class="offre">…</div>` dans la section `id="engagements"`, et le paragraphe « Offre de lancement » de l'article 5 des CGV.
