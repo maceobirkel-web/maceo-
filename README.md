@@ -1,39 +1,39 @@
 # maceo-
 
-A Claude Code plugin marketplace.
+Une marketplace de plugins Claude Code.
 
 ## Plugins
 
 | Plugin | Description |
 | --- | --- |
-| [`marketing-skills`](plugins/marketing-skills) | Skills for copywriting, brand voice, SEO, social media, email, launches and competitor research |
+| [`marketing-skills`](plugins/marketing-skills) | Skills marketing en français : copywriting, ton de marque, SEO, réseaux sociaux, e-mailing, lancements, veille concurrentielle, et spécificités des marchés francophones |
 
-## Install
+## Installation
 
-In Claude Code:
+Dans Claude Code :
 
 ```
 /plugin marketplace add maceobirkel-web/maceo-
 /plugin install marketing-skills@maceo-plugins
 ```
 
-To try it from a local clone without installing:
+Pour l'essayer depuis un clone local, sans l'installer :
 
 ```
 claude --plugin-dir ./plugins/marketing-skills
 ```
 
-## Adding a skill
+## Ajouter un skill
 
-Create `plugins/marketing-skills/skills/<skill-name>/SKILL.md` with frontmatter:
+Créez `plugins/marketing-skills/skills/<nom-du-skill>/SKILL.md` avec cet en-tête :
 
 ```markdown
 ---
-name: skill-name
-description: What it does and when Claude should use it.
+name: nom-du-skill
+description: Ce que fait le skill et quand Claude doit l'utiliser.
 ---
 
-Instructions for Claude...
+Instructions pour Claude…
 ```
 
-Bump `version` in `plugins/marketing-skills/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` when you release changes.
+Augmentez le champ `version` dans `plugins/marketing-skills/.claude-plugin/plugin.json` et `.claude-plugin/marketplace.json` à chaque nouvelle version.

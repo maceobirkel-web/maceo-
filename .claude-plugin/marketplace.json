@@ -4,16 +4,26 @@
     "name": "Maceo Birkel"
   },
   "metadata": {
-    "description": "Claude Code plugins by Maceo Birkel"
+    "description": "Plugins Claude Code de Maceo Birkel"
   },
   "plugins": [
     {
       "name": "marketing-skills",
       "source": "./plugins/marketing-skills",
-      "description": "Marketing skills for copywriting, brand voice, SEO, social media, email, launches and competitor research",
-      "version": "0.1.0",
+      "description": "Skills marketing en français : copywriting, ton de marque, SEO, réseaux sociaux, e-mailing, lancements, veille concurrentielle, et spécificités des marchés francophones (localisation, typographie, conformité, calendrier commercial)",
+      "version": "0.2.0",
       "category": "marketing",
-      "keywords": ["marketing", "copywriting", "seo", "social-media", "email", "launch"]
+      "keywords": [
+        "marketing",
+        "copywriting",
+        "seo",
+        "réseaux-sociaux",
+        "emailing",
+        "lancement",
+        "francophone",
+        "localisation",
+        "rgpd"
+      ]
     }
   ]
 }

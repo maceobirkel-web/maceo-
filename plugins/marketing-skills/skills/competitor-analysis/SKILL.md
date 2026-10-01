@@ -1,47 +1,49 @@
 ---
 name: competitor-analysis
-description: Research and compare competitors' positioning, messaging, pricing, features and channels, and turn findings into positioning opportunities. Use when the user asks about competitors, wants a competitive matrix or battlecard, a "vs" comparison page, or help differentiating.
+description: Analyser et comparer le positionnement, les messages, les prix, les fonctionnalités et les canaux des concurrents, et en tirer des opportunités de positionnement. À utiliser quand l'utilisateur parle de concurrents, de veille concurrentielle, veut une matrice concurrentielle, une fiche argumentaire (battlecard), une page comparative « nous vs eux », ou de l'aide pour se différencier.
 ---
 
-# Competitor Analysis
+# Analyse concurrentielle
 
-## Sources and honesty
+## Sources et honnêteté
 
-Use web search/fetch tools when available to read competitors' homepages, pricing pages, docs, changelogs and reviews (G2, Capterra, app stores, Reddit). Cite the URL for every claim and note the date checked — pricing and features change.
+Quand des outils de recherche ou de lecture web sont disponibles, lire les pages d'accueil, pages de prix, documentations, changelogs et avis des concurrents (Trustpilot, Avis Vérifiés, G2, Capterra, boutiques d'applications, Reddit, forums). Citer l'URL de chaque affirmation et la date de consultation — prix et fonctionnalités changent.
 
-If you can't browse, say so and work only from what the user provides plus clearly labeled general knowledge that may be outdated. Never present guesses as facts.
+Sans accès au web, le dire et travailler uniquement à partir des informations fournies et de connaissances générales clairement signalées comme possiblement obsolètes. Ne jamais présenter une supposition comme un fait.
 
-## Process
+Sur les marchés francophones, inclure les acteurs locaux, souvent absents des comparatifs anglophones.
 
-1. **Define the set.** Direct competitors (same solution, same customer), indirect (different solution, same problem), and the status quo ("spreadsheets", "do nothing"). Confirm the list with the user if unsure.
-2. **Capture each competitor:**
-   - Homepage headline & subhead (verbatim) — reveals their positioning
-   - Target customer & segment
-   - Key features and notable gaps
-   - Pricing model and entry price
-   - Primary channels (SEO, paid, community, sales-led, PLG)
-   - What customers praise / complain about (from reviews)
-3. **Build the matrix:**
+## Méthode
+
+1. **Définir le périmètre.** Concurrents directs (même solution, même client), indirects (autre solution, même problème) et le statu quo (« un tableur », « ne rien faire »). Faire valider la liste par l'utilisateur en cas de doute.
+2. **Fiche par concurrent :**
+   - Titre et sous-titre de la page d'accueil (mot pour mot) — ils révèlent le positionnement
+   - Client cible et segment
+   - Fonctionnalités clés et manques notables
+   - Modèle de prix et prix d'entrée (HT ou TTC, devise)
+   - Canaux principaux (SEO, publicité, communauté, vente directe, produit en libre-service)
+   - Ce que les clients apprécient ou reprochent (d'après les avis)
+3. **Construire la matrice :**
 
 ```markdown
-| | Us | Competitor A | Competitor B |
-| Positioning | | | |
-| Target customer | | | |
-| Pricing | | | |
-| Key strength | | | |
-| Key weakness | | | |
-| Feature X | ✅ / ❌ / partial | | |
+| | Nous | Concurrent A | Concurrent B |
+| Positionnement | | | |
+| Client cible | | | |
+| Prix | | | |
+| Point fort | | | |
+| Point faible | | | |
+| Fonctionnalité X | ✅ / ❌ / partiel | | |
 ```
 
-4. **Synthesize.** The value is in the "so what":
-   - Where messaging is crowded (everyone says the same thing)
-   - Underserved segments or unmet complaints
-   - Our credible differentiators — be honest about where we lose
-   - Recommended positioning angle and 2–3 messages to test
+4. **Synthétiser.** La valeur est dans le « et donc ? » :
+   - Où les messages se ressemblent tous
+   - Segments mal servis ou reproches restés sans réponse
+   - Nos vrais éléments de différenciation — être honnête sur ce qui nous fait perdre
+   - Angle de positionnement recommandé et 2 ou 3 messages à tester
 
-## Optional outputs
+## Livrables optionnels
 
-- **Sales battlecard:** quick pitch vs. each competitor, landmines to set, objection → response, when we win / when we lose.
-- **"Us vs. Them" comparison page:** fair, factual, sourced; acknowledge where the competitor is a better fit. Avoid disparaging claims that can't be substantiated.
+- **Fiche argumentaire (battlecard) :** pitch face à chaque concurrent, questions pièges à poser, objection → réponse, quand nous gagnons / quand nous perdons.
+- **Page comparative « nous vs eux » :** loyale, factuelle, sourcée ; reconnaître les cas où le concurrent convient mieux. En France, la publicité comparative est encadrée (Code de la consommation : comparaison objective de caractéristiques essentielles, pertinentes et vérifiables) — voir `conformite-marketing-fr`. Éviter tout dénigrement.
 
-Save as `COMPETITOR_ANALYSIS.md` if the user wants a file.
+Enregistrer dans `ANALYSE_CONCURRENTIELLE.md` si l'utilisateur veut un fichier.

@@ -1,10 +1,20 @@
 {
   "name": "marketing-skills",
-  "version": "0.1.0",
-  "description": "Marketing skills for copywriting, brand voice, SEO, social media, email, launches and competitor research",
+  "version": "0.2.0",
+  "description": "Skills marketing en français : copywriting, ton de marque, SEO, réseaux sociaux, e-mailing, lancements, veille concurrentielle, et spécificités des marchés francophones (localisation, typographie, conformité, calendrier commercial)",
   "author": {
     "name": "Maceo Birkel"
   },
-  "keywords": ["marketing", "copywriting", "seo", "social-media", "email", "launch"],
+  "keywords": [
+    "marketing",
+    "copywriting",
+    "seo",
+    "réseaux-sociaux",
+    "emailing",
+    "lancement",
+    "francophone",
+    "localisation",
+    "rgpd"
+  ],
   "license": "MIT"
 }

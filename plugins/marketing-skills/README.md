@@ -1,18 +1,30 @@
 # marketing-skills
 
-A Claude Code plugin with skills for everyday marketing work. Claude loads each skill automatically when your request matches it. You can also call one directly, e.g. `/marketing-skills:copywriting`.
+Un plugin Claude Code avec des skills pour le marketing au quotidien, pensé pour les marchés francophones. Claude charge automatiquement le bon skill quand votre demande y correspond. Vous pouvez aussi en appeler un directement, par exemple `/marketing-skills:copywriting`.
 
-| Skill | Use it for |
+## Skills généraux
+
+| Skill | Usage |
 | --- | --- |
-| `copywriting` | Landing pages, headlines, taglines, CTAs, ad and product copy |
-| `brand-voice` | Creating a voice guide, auditing content, rewriting to match a voice |
-| `seo-content` | Content briefs, SEO blog posts, meta tags, on-page audits |
-| `social-media` | Posts, threads, captions, scripts, content calendars, repurposing |
-| `email-campaigns` | Newsletters, announcements, onboarding/nurture sequences, cold outreach |
-| `launch-plan` | Go-to-market plans, launch timelines, asset checklists, metrics |
-| `competitor-analysis` | Competitive matrices, battlecards, "vs" pages, positioning gaps |
+| `copywriting` | Pages d'atterrissage, titres, slogans, CTA, annonces, fiches produit |
+| `brand-voice` | Guide de ton, vérification de cohérence, réécriture selon la voix de la marque |
+| `seo-content` | Briefs de contenu, articles optimisés, balises meta, audits on-page |
+| `social-media` | Posts, threads, légendes, scripts vidéo, calendriers éditoriaux, déclinaisons |
+| `email-campaigns` | Newsletters, annonces, séquences d'onboarding et de nurturing, prospection |
+| `launch-plan` | Plans de lancement, rétroplanning, liste des supports, indicateurs |
+| `competitor-analysis` | Matrices concurrentielles, fiches argumentaires, pages comparatives |
 
-## Tips
+## Skills marchés francophones
 
-- Add a `BRAND_VOICE.md` to your project (the `brand-voice` skill can write it) and the other skills will follow it.
-- The skills use placeholders like `[STAT: ...]` instead of inventing numbers, testimonials or prices. Replace them with real data before publishing.
+| Skill | Usage |
+| --- | --- |
+| `localisation-francophone` | Adapter un contenu pour la France, la Belgique, la Suisse, le Québec, le Luxembourg ou l'Afrique francophone ; transcréation depuis l'anglais |
+| `redaction-francaise` | Typographie (espaces insécables, guillemets, majuscules, nombres), calques de l'anglais, tutoiement/vouvoiement, écriture inclusive |
+| `conformite-marketing-fr` | RGPD, cookies CNIL, prospection, loi Toubon, influence commerciale, prix barrés, mentions obligatoires, loi 96, loi 25, LCAP, droit suisse |
+| `calendrier-commercial-fr` | Soldes, rentrée, French Days, Black Friday, fêtes et temps forts par pays |
+
+## Conseils
+
+- Ajoutez un fichier `BRAND_VOICE.md` à votre projet (le skill `brand-voice` peut le rédiger) : les autres skills le suivront, y compris le choix du tutoiement ou du vouvoiement.
+- Les skills utilisent des espaces réservés comme `[STAT : …]` au lieu d'inventer des chiffres, des témoignages ou des prix. Remplacez-les par de vraies données avant publication.
+- `conformite-marketing-fr` ne remplace pas un avis juridique : faites valider les points sensibles par un juriste.

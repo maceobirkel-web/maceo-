@@ -1,45 +1,52 @@
 ---
 name: email-campaigns
-description: Write marketing emails and email sequences — newsletters, product announcements, onboarding/welcome series, nurture drips, re-engagement, abandoned cart and cold outreach. Use when the user asks for an email, subject lines, a drip or lifecycle sequence, or wants to improve open/click rates.
+description: Rédiger des e-mails marketing et des séquences d'e-mails — newsletters, annonces produit, séries de bienvenue et d'onboarding, nurturing, réactivation, panier abandonné et prospection à froid. À utiliser quand l'utilisateur demande un e-mail, des objets d'e-mail, une séquence automatisée, ou veut améliorer ses taux d'ouverture et de clic.
 ---
 
-# Email Campaigns
+# Campagnes e-mail
 
 ## Brief
 
-Establish: email type, audience segment and what they've already done (signed up, trialed, churned), the single goal of each email, sender name, offer/deadline, voice, and any ESP constraints (merge tags like `{{first_name}}`, plain-text vs HTML).
+Établir : type d'e-mail, segment visé et ce qu'il a déjà fait (inscription, essai, désabonnement), l'objectif unique de chaque e-mail, le nom de l'expéditeur, l'offre ou la date limite, le ton, le tutoiement ou vouvoiement, le marché francophone, et les contraintes de l'outil d'envoi (variables comme `{{prenom}}`, texte brut ou HTML).
 
-## Single email anatomy
+## Anatomie d'un e-mail
 
-1. **Subject line** — give 5 options across styles: benefit, curiosity, urgency, personal, question. Aim for under ~50 characters. No spammy ALL CAPS or excessive punctuation.
-2. **Preview text** — extends the subject, never repeats it (~40–90 chars).
-3. **Opening line** — about the reader, not about you.
-4. **Body** — one idea, short paragraphs, scannable. Benefits before features.
-5. **One primary CTA** — button text is a specific verb phrase. Repeat it once for long emails.
-6. **P.S.** (optional) — restate the offer or add urgency; P.S. lines get read.
+1. **Objet** — proposer 5 options de styles différents : bénéfice, curiosité, urgence, personnel, question. Viser moins de ~50 caractères. Pas de MAJUSCULES ni de ponctuation excessive (signaux de spam).
+2. **Texte de prévisualisation** — prolonge l'objet sans le répéter (~40 à 90 caractères).
+3. **Première phrase** — parle du lecteur, pas de l'entreprise.
+4. **Corps** — une idée, paragraphes courts, facile à parcourir. Les bénéfices avant les fonctionnalités.
+5. **Un seul CTA principal** — le texte du bouton est un verbe précis. Le répéter une fois dans les e-mails longs.
+6. **P.-S.** (facultatif) — rappeler l'offre ou ajouter de l'urgence ; les P.-S. sont lus.
 
-## Sequences
+Formules d'appel et de politesse : adapter au marché et au ton (« Bonjour Camille, » est sûr partout ; « Allô » ou « Salut » selon la marque au Québec). Dans un e-mail marketing, éviter les formules longues (« Veuillez agréer… »).
 
-Output a sequence map first, then each email:
+## Séquences
 
-| # | Send timing / trigger | Goal | Subject | Core message | CTA |
+Présenter d'abord la carte de la séquence, puis chaque e-mail :
+
+| # | Délai / déclencheur | Objectif | Objet | Message clé | CTA |
 | --- | --- | --- | --- | --- | --- |
 
-Common blueprints:
-- **Welcome / onboarding (4–6 emails):** deliver promised value → quick win → key feature → social proof → upgrade/next step.
-- **Nurture:** educate on the problem, build trust, soft then direct CTA.
-- **Re-engagement (3 emails):** "still interested?" → best value reminder → breakup email with clear opt-out.
-- **Launch:** teaser → launch day → social proof / FAQ → last chance.
-- **Cold outreach:** ≤120 words, personalized first line, one clear ask, no attachments; follow-ups add new value, not "just bumping this".
+Modèles courants :
+- **Bienvenue / onboarding (4 à 6 e-mails) :** livrer la valeur promise → premier succès rapide → fonctionnalité clé → preuve sociale → montée en gamme ou étape suivante.
+- **Nurturing :** expliquer le problème, créer la confiance, CTA doux puis direct.
+- **Réactivation (3 e-mails) :** « toujours intéressé ? » → rappel de la meilleure valeur → e-mail de rupture avec désinscription claire.
+- **Lancement :** teaser → jour J → preuve sociale / FAQ → dernière chance.
+- **Prospection à froid :** ≤ 120 mots, première phrase personnalisée, une seule demande claire, pas de pièce jointe ; les relances apportent du nouveau, pas « je me permets de vous relancer ».
 
-Add exit conditions (e.g. "stop if user converts").
+Ajouter des conditions de sortie (par ex. « arrêter si l'utilisateur convertit »).
 
-## Compliance & deliverability
+## Conformité et délivrabilité
 
-- Include an unsubscribe placeholder and physical address placeholder for marketing email (CAN-SPAM / GDPR / CASL).
-- Only email people who opted in; flag if the request implies scraped or purchased lists.
-- Never invent discounts, deadlines, or testimonials — use placeholders.
+Les règles dépendent du pays du destinataire — se référer au skill `conformite-marketing-fr`. Points essentiels :
 
-## Testing
+- **France / Belgique / UE (RGPD + règles e-privacy) :** en B2C, consentement préalable (opt-in) obligatoire, sauf clients existants pour des produits ou services analogues. En B2B (France), l'envoi est possible sans consentement préalable si le message est en rapport avec la fonction du destinataire, avec un droit d'opposition simple.
+- **Canada / Québec (LCAP) :** consentement exprès ou tacite, identification de l'expéditeur, mécanisme de désabonnement traité sous 10 jours ouvrables.
+- **Suisse (LCD) :** consentement préalable pour les envois de masse, expéditeur identifiable, désinscription gratuite.
+- Toujours prévoir un lien de désinscription et l'identité de l'expéditeur (espaces réservés si inconnus).
+- N'écrire qu'à des personnes qui ont accepté ; signaler toute demande qui suppose des listes achetées ou extraites.
+- Ne jamais inventer de remises, de dates limites ou de témoignages : utiliser des espaces réservés.
 
-Suggest one A/B test per email (usually subject line or CTA) and the metric to judge it by (open rate is unreliable with privacy protections; prefer clicks or conversions).
+## Tests
+
+Proposer un test A/B par e-mail (généralement l'objet ou le CTA) et l'indicateur pour trancher (le taux d'ouverture est peu fiable avec les protections de confidentialité ; privilégier les clics ou les conversions).

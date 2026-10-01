@@ -1,56 +1,59 @@
 ---
 name: copywriting
-description: Write or rewrite conversion-focused marketing copy — landing pages, homepage heroes, headlines, taglines, product descriptions, CTAs, ad copy and feature/benefit sections. Use when the user asks for copy, a headline, a tagline, a value proposition, or wants existing copy to convert better.
+description: Rédiger ou réécrire des textes marketing orientés conversion — pages d'atterrissage, sections hero, titres, slogans, fiches produit, boutons d'action (CTA), annonces publicitaires et sections fonctionnalités/bénéfices. À utiliser quand l'utilisateur demande un texte, un titre, un slogan, une proposition de valeur, ou veut qu'un texte existant convertisse mieux.
 ---
 
 # Copywriting
 
-Produce copy that makes one specific reader take one specific action.
+Produire un texte qui amène un lecteur précis à faire une action précise.
 
-## 1. Pin down the brief
+## 1. Cadrer le brief
 
-Before writing, establish (from the user, the repo, or existing pages — ask only for what you can't find):
+Avant d'écrire, établir (auprès de l'utilisateur, dans le dépôt ou dans les pages existantes — ne demander que ce qui est introuvable) :
 
-- **Audience**: who is reading, what they already know, what they're frustrated by.
-- **Offer**: the product/feature and the single most important outcome it delivers.
-- **Action**: the one thing the reader should do next (sign up, book a demo, buy, reply).
-- **Proof**: numbers, customer names, testimonials, awards, guarantees you're allowed to use.
-- **Voice**: check for a brand voice guide (see the `brand-voice` skill). If none, default to clear, confident, plain English.
-- **Constraints**: character limits, placement (ad, hero, button), legal/compliance rules.
+- **Cible** : qui lit, ce qu'il sait déjà, ce qui le frustre.
+- **Offre** : le produit ou la fonctionnalité, et le résultat le plus important qu'il apporte.
+- **Action** : la seule chose que le lecteur doit faire ensuite (s'inscrire, demander une démo, acheter, répondre).
+- **Preuves** : chiffres, noms de clients, témoignages, prix, garanties que l'on a le droit d'utiliser.
+- **Ton** : chercher un guide de ton de marque (voir le skill `brand-voice`). À défaut, viser un français clair, assuré et simple.
+- **Marché** : pays ou région francophone visé (voir le skill `localisation-francophone`) et tutoiement ou vouvoiement.
+- **Contraintes** : nombre de caractères, emplacement (annonce, hero, bouton), règles juridiques (voir `conformite-marketing-fr`).
 
-Never invent statistics, testimonials, customer logos or guarantees. Use clearly marked placeholders like `[STAT: % time saved]` instead.
+Ne jamais inventer de statistiques, de témoignages, de logos clients ou de garanties. Utiliser des espaces réservés clairement signalés, comme `[STAT : % de temps gagné]`.
 
-## 2. Find the angle
+## 2. Trouver l'angle
 
-Write one sentence: *"For [audience] who [pain], [product] [outcome], unlike [alternative]."* Every line of copy should serve that sentence.
+Écrire une phrase : *« Pour [cible] qui [problème], [produit] [résultat], contrairement à [alternative]. »* Chaque ligne du texte doit servir cette phrase.
 
-Pick a framework that fits the format:
+Choisir une structure adaptée au format :
 
-| Format | Framework |
+| Format | Structure |
 | --- | --- |
-| Landing page / long-form | PAS (Problem → Agitate → Solution) or AIDA |
-| Hero section | Outcome headline + how-it-works subhead + CTA |
-| Feature section | Feature → Benefit → "So you can…" |
-| Ads / short form | Hook + specific outcome + CTA |
+| Page d'atterrissage / format long | PAS (Problème → Agitation → Solution) ou AIDA |
+| Section hero | Titre axé résultat + sous-titre « comment ça marche » + CTA |
+| Section fonctionnalités | Fonctionnalité → Bénéfice → « Pour que vous puissiez… » |
+| Annonces / format court | Accroche + résultat précis + CTA |
 
-## 3. Write
+## 3. Écrire
 
-- Lead with the outcome, not the feature. "Close your books in 2 days" beats "Automated reconciliation engine".
-- Be specific: numbers, timeframes, named situations.
-- One idea per sentence. Short paragraphs. Active voice. Second person ("you").
-- Use the customer's words, not internal jargon.
-- CTAs are verbs describing what the reader gets: "Start my free trial", not "Submit".
-- Handle the top objection (price, effort, risk, trust) near the CTA.
+- Commencer par le résultat, pas par la fonctionnalité. « Clôturez vos comptes en 2 jours » plutôt que « Moteur de rapprochement automatisé ».
+- Être précis : chiffres, délais, situations concrètes.
+- Une idée par phrase. Paragraphes courts. Voix active. S'adresser directement au lecteur.
+- Reprendre les mots des clients, pas le jargon interne. Éviter les anglicismes inutiles.
+- Les CTA sont des verbes qui décrivent ce que le lecteur obtient : « Démarrer mon essai gratuit », pas « Envoyer ».
+- Traiter la principale objection (prix, effort, risque, confiance) près du CTA.
+- Ne pas traduire mot à mot une structure anglaise : un texte français est souvent 15 à 25 % plus long, prévoir de la place ou reformuler plus court.
+- Respecter la typographie française (voir le skill `redaction-francaise`) : majuscule au premier mot seulement dans les titres, espaces avant `: ; ! ?`, guillemets « ».
 
-## 4. Deliver
+## 4. Livrer
 
-- Give **3 headline variants** with different angles (outcome, pain, curiosity/contrast) and say which you'd test first and why.
-- Present the copy in the structure it will live in (section headings, button labels, meta text).
-- Flag any placeholders and assumptions at the end.
-- If editing existing copy, show before → after for changed lines and a one-line reason for each.
+- Proposer **3 variantes de titre** avec des angles différents (résultat, problème, curiosité/contraste) et indiquer laquelle tester en premier, et pourquoi.
+- Présenter le texte dans la structure où il sera publié (intertitres, libellés de boutons, balises meta).
+- Lister les espaces réservés et les hypothèses à la fin.
+- Pour une réécriture, montrer avant → après pour chaque ligne modifiée, avec une raison en une ligne.
 
-## Self-check before sending
+## Vérification avant envoi
 
-- Could a competitor paste their logo on this unchanged? If so, make it more specific.
-- Is there exactly one primary CTA?
-- Did you read it as the target reader and cut every sentence that doesn't earn its place?
+- Un concurrent pourrait-il coller son logo sur ce texte sans rien changer ? Si oui, être plus précis.
+- Y a-t-il exactement un CTA principal ?
+- Relire en se mettant à la place du lecteur cible et supprimer toute phrase qui n'apporte rien.

@@ -1,57 +1,67 @@
 ---
 name: brand-voice
-description: Define, document, or apply a brand voice and tone guide. Use when the user wants to create a style/voice guide, audit content for on-brand consistency, or rewrite text to match an existing brand voice.
+description: Définir, documenter ou appliquer le ton et la voix d'une marque. À utiliser quand l'utilisateur veut créer un guide de ton ou une charte éditoriale, vérifier la cohérence de contenus avec la marque, ou réécrire un texte pour qu'il corresponde à une voix existante.
 ---
 
-# Brand Voice
+# Ton de marque
 
-## Locate an existing guide first
+## Chercher d'abord un guide existant
 
-Search the project for a voice guide before creating one: files like `BRAND.md`, `brand-voice.md`, `VOICE.md`, `docs/brand/*`, `style-guide*`, or a "Voice" section in `CLAUDE.md`. If one exists, follow it and only propose changes when asked.
+Avant d'en créer un, chercher un guide de ton dans le projet : fichiers comme `BRAND_VOICE.md`, `CHARTE_EDITORIALE.md`, `brand-voice.md`, `VOICE.md`, `docs/brand/*`, `style-guide*`, ou une section « Ton » dans `CLAUDE.md`. S'il existe, le suivre et ne proposer de modifications que sur demande.
 
-## Creating a voice guide
+## Créer un guide de ton
 
-1. **Gather samples.** Ask for (or find) 3–10 pieces of content the user considers on-brand, plus any they consider off-brand. Also ask about audience, mission, and 2–3 brands they admire.
-2. **Extract traits.** Identify 3–4 voice traits. For each, define it with a "this, not that" pair so it's actionable:
-   - *Confident, not arrogant*
-   - *Playful, not silly*
-   - *Expert, not academic*
-3. **Write the guide** using this structure and save it as `BRAND_VOICE.md` (or where the user prefers):
+1. **Rassembler des exemples.** Demander (ou trouver) 3 à 10 contenus que l'utilisateur juge fidèles à la marque, et d'autres qu'il juge à côté. Demander aussi la cible, la mission et 2 ou 3 marques admirées.
+2. **Dégager des traits.** Identifier 3 ou 4 traits de voix. Définir chacun par une paire « ceci, pas cela » pour le rendre concret :
+   - *Assuré, pas arrogant*
+   - *Ludique, pas puéril*
+   - *Expert, pas universitaire*
+3. **Trancher les questions propres au français** :
+   - **Tutoiement ou vouvoiement** — et s'il change selon le canal (réseaux sociaux vs. facturation) ou le marché (le tutoiement passe plus facilement au Québec qu'en France ou en Suisse).
+   - **Écriture inclusive** — aucune, formulations épicènes et doublets (« toutes et tous »), ou point médian (« client·es »). Choisir une règle et l'appliquer partout.
+   - **Anglicismes** — tolérés, limités ou proscrits (plus sensible au Québec, voir `localisation-francophone`).
+4. **Rédiger le guide** avec la structure suivante et l'enregistrer dans `BRAND_VOICE.md` (ou là où l'utilisateur le souhaite) :
 
 ```markdown
-# [Brand] Voice Guide
+# Guide de ton — [Marque]
 
-## Who we're talking to
-[Primary audience in 2–3 sentences]
+## À qui nous parlons
+[Cible principale en 2 ou 3 phrases]
 
-## Voice traits
-### [Trait] — [this], not [that]
-- Do: [concrete guidance]
-- Don't: [concrete guidance]
-- Example: "[on-brand line]" vs. "[off-brand line]"
+## Traits de voix
+### [Trait] — [ceci], pas [cela]
+- À faire : [consigne concrète]
+- À éviter : [consigne concrète]
+- Exemple : « [phrase fidèle] » vs « [phrase à côté] »
 
-## Tone by context
-| Context | Tone shift | Example |
-| Onboarding | Warm, encouraging | ... |
-| Error messages | Calm, direct, helpful | ... |
-| Social | Lighter, more personality | ... |
-| Legal/billing | Plain, precise | ... |
+## Tutoiement / vouvoiement
+[Règle et exceptions]
 
-## Word list
-- Use: [preferred terms]
-- Avoid: [banned terms, jargon, competitor terms]
+## Écriture inclusive
+[Règle retenue et exemples]
 
-## Mechanics
-[Capitalization, punctuation, emoji, numbers, Oxford comma, product name styling]
+## Ton selon le contexte
+| Contexte | Variation du ton | Exemple |
+| Accueil / onboarding | Chaleureux, encourageant | ... |
+| Messages d'erreur | Calme, direct, utile | ... |
+| Réseaux sociaux | Plus léger, plus de personnalité | ... |
+| Juridique / facturation | Simple, précis | ... |
+
+## Lexique
+- À utiliser : [termes préférés]
+- À éviter : [termes interdits, jargon, anglicismes, termes des concurrents]
+
+## Règles d'écriture
+[Majuscules, ponctuation et espaces, émojis, nombres, nom du produit — voir `redaction-francaise`]
 ```
 
-## Auditing content
+## Vérifier des contenus
 
-For each piece reviewed, return:
-- An overall on-brand score (1–5) with a one-line justification.
-- A table of specific lines: `original | issue (which trait/rule) | suggested rewrite`.
-- Patterns that recur across pieces, so the user can fix the root cause.
+Pour chaque contenu relu, fournir :
+- Une note de cohérence avec la marque (1 à 5) justifiée en une ligne.
+- Un tableau des phrases concernées : `texte original | problème (trait ou règle) | réécriture proposée`.
+- Les problèmes récurrents d'un contenu à l'autre, pour que l'utilisateur corrige la cause.
 
-## Rewriting
+## Réécrire
 
-Preserve meaning, facts, and structure; change only voice. Keep length within ±15% unless told otherwise.
+Conserver le sens, les faits et la structure ; ne changer que la voix. Garder la longueur à ±15 % sauf indication contraire.

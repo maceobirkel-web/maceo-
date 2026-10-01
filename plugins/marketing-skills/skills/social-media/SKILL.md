@@ -1,39 +1,41 @@
 ---
 name: social-media
-description: Create social media posts, threads, captions and content calendars for LinkedIn, X/Twitter, Instagram, TikTok, Threads, Bluesky, Facebook and YouTube. Use when the user wants social posts, a thread, captions, hashtags, a posting schedule, or to repurpose content (a blog post, launch, video) for social.
+description: Créer des publications, threads, légendes et calendriers éditoriaux pour LinkedIn, X/Twitter, Instagram, TikTok, Threads, Bluesky, Facebook et YouTube. À utiliser quand l'utilisateur veut des posts, un thread, des légendes, des hashtags, un planning de publication, ou décliner un contenu (article, lancement, vidéo) pour les réseaux sociaux.
 ---
 
-# Social Media
+# Réseaux sociaux
 
 ## Brief
 
-Confirm: platform(s), goal (awareness, engagement, clicks, signups), audience, source material, voice (check for a brand voice guide), and any link/CTA. If the user doesn't name a platform, ask or default to LinkedIn + X.
+Confirmer : plateforme(s), objectif (notoriété, engagement, clics, inscriptions), cible, marché francophone, contenu source, ton (chercher un guide de ton), tutoiement ou vouvoiement, et lien ou CTA éventuel. Si aucune plateforme n'est précisée, demander ou partir sur LinkedIn + Instagram.
 
-## Platform playbook
+## Repères par plateforme
 
-| Platform | Format that works | Length | Notes |
+| Plateforme | Format efficace | Longueur | Remarques |
 | --- | --- | --- | --- |
-| LinkedIn | Hook line, white space, story or insight, takeaway, question | ~150–300 words | First 2 lines show before "see more" — make them count. Links often perform better in a comment. |
-| X / Twitter | Single punchy post or numbered thread | ≤280 chars per post | Thread: hook post promises value, each post stands alone, last post = CTA. |
-| Instagram | Caption supports a visual; carousel for education | Hook in first line | 3–5 relevant hashtags. Describe the visual/carousel slides too. |
-| TikTok / Reels / Shorts | Script: hook (0–3s), value, payoff, CTA | 15–60s | Write on-screen text + spoken lines separately. |
-| Threads / Bluesky | Conversational, opinionated | Short | Less polished, more personal. |
-| Facebook | Community, questions, events | Short–medium | Native video and groups do well. |
+| LinkedIn | Accroche, aération, histoire ou enseignement, conclusion, question | ~150 à 300 mots | Les 2 premières lignes s'affichent avant « voir plus » : elles doivent accrocher. Les liens marchent souvent mieux en commentaire. |
+| X / Twitter | Post percutant ou thread numéroté | ≤ 280 caractères par post | Thread : le premier post promet la valeur, chaque post tient seul, le dernier porte le CTA. |
+| Instagram | La légende accompagne un visuel ; carrousel pour la pédagogie | Accroche en première ligne | 3 à 5 hashtags pertinents. Décrire aussi le visuel ou les slides du carrousel. |
+| TikTok / Reels / Shorts | Script : accroche (0–3 s), valeur, chute, CTA | 15 à 60 s | Séparer le texte à l'écran et le texte parlé. |
+| Threads / Bluesky | Conversationnel, avec un point de vue | Court | Moins léché, plus personnel. |
+| Facebook | Communauté, questions, événements | Court à moyen | La vidéo native et les groupes fonctionnent bien. Encore très utilisé en Afrique francophone et au Québec. |
+| WhatsApp (chaînes, Status) | Message court, visuel, lien | Court | Canal majeur en Afrique francophone (voir `localisation-francophone`). |
 
-Platform behaviour changes often — treat these as starting points, not rules.
+Le fonctionnement des plateformes change souvent : ce sont des points de départ, pas des règles.
 
-## Writing rules
+## Règles d'écriture
 
-- The hook is everything: a bold claim, a specific number, a contrarian take, or a relatable problem.
-- One idea per post.
-- Write like a person, not a press release. Cut "We're excited to announce".
-- Use emoji and hashtags only if the brand voice allows; never more than a few.
-- Every post has a purpose: a CTA, a question, or a reason to follow.
+- Tout se joue sur l'accroche : affirmation forte, chiffre précis, avis à contre-courant ou problème familier.
+- Une idée par post.
+- Écrire comme une personne, pas comme un communiqué. Supprimer « Nous sommes ravis d'annoncer ».
+- Émojis et hashtags seulement si le ton de la marque le permet, et jamais plus de quelques-uns. Hashtags en français si la cible cherche en français.
+- Chaque post a un but : un CTA, une question ou une raison de s'abonner.
+- Contenu sponsorisé ou partenariat d'influence : mention obligatoire en France (« Publicité » ou « Collaboration commerciale »), voir `conformite-marketing-fr`.
 
-## Deliverables
+## Livrables
 
-- **Single post request:** give 3 variants with different hooks.
-- **Repurposing:** turn one source into a set (e.g. 1 LinkedIn post, 1 X thread, 3 standalone X posts, 1 carousel outline, 1 short-video script).
-- **Content calendar:** a table — `date | platform | pillar | hook | format | CTA | asset needed`. Balance content pillars (e.g. educate / behind-the-scenes / social proof / promotion ≈ 40/20/20/20). Save as Markdown or CSV if the user wants a file.
+- **Demande d'un post :** 3 variantes avec des accroches différentes.
+- **Déclinaison :** transformer une source en un ensemble (par ex. 1 post LinkedIn, 1 thread X, 3 posts X autonomes, 1 plan de carrousel, 1 script de vidéo courte).
+- **Calendrier éditorial :** un tableau `date | plateforme | pilier | accroche | format | CTA | visuel nécessaire`. Équilibrer les piliers (par ex. éduquer / coulisses / preuve sociale / promotion ≈ 40/20/20/20). S'appuyer sur `calendrier-commercial-fr` pour les temps forts. Enregistrer en Markdown ou CSV si l'utilisateur veut un fichier.
 
-Note character counts for X posts. Never fabricate engagement stats or customer quotes.
+Indiquer le nombre de caractères des posts X. Ne jamais inventer de statistiques d'engagement ou de citations de clients.

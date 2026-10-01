@@ -1,59 +1,64 @@
 ---
 name: launch-plan
-description: Build a go-to-market or product launch plan — positioning, messaging, channel plan, timeline, launch assets checklist and success metrics. Use when the user is launching a product, feature, app, or company, or asks for a GTM strategy, launch checklist, or Product Hunt / Hacker News launch.
+description: Construire un plan de lancement ou de mise sur le marché (go-to-market) — positionnement, messages, plan de canaux, rétroplanning, liste des supports et indicateurs de réussite. À utiliser quand l'utilisateur lance un produit, une fonctionnalité, une application ou une entreprise, ou demande une stratégie go-to-market, une checklist de lancement ou un lancement sur Product Hunt.
 ---
 
-# Launch Plan
+# Plan de lancement
 
-## 1. Gather context
+## 1. Réunir le contexte
 
-Ask for or find (README, changelog, docs, landing page): what's launching, who it's for, launch date, launch size (tier), budget/team, existing audience (email list, followers, customers), and the primary goal (signups, revenue, press, waitlist).
+Demander ou trouver (README, changelog, documentation, page d'atterrissage) : ce qui est lancé, pour qui, la date, l'ampleur du lancement (niveau), le budget et l'équipe, l'audience existante (liste e-mail, abonnés, clients), le ou les marchés francophones visés et l'objectif principal (inscriptions, chiffre d'affaires, presse, liste d'attente).
 
-**Launch tiers** — size the plan to the launch:
-- **Tier 1 (major):** new product or company. Full campaign.
-- **Tier 2 (notable):** significant feature. Blog, email, social, in-app.
-- **Tier 3 (minor):** improvement. Changelog, in-app note, one social post.
+**Niveaux de lancement** — dimensionner le plan :
+- **Niveau 1 (majeur) :** nouveau produit ou nouvelle entreprise. Campagne complète.
+- **Niveau 2 (notable) :** fonctionnalité importante. Article de blog, e-mail, réseaux sociaux, annonce dans le produit.
+- **Niveau 3 (mineur) :** amélioration. Changelog, note dans le produit, un post.
 
-## 2. Positioning & messaging
+## 2. Positionnement et messages
 
-Produce a messaging block every asset will draw from:
-
-```markdown
-**Category:** what it is, in words customers use
-**Target customer:** ...
-**Problem:** ...
-**Key benefit (one line):** ...
-**Differentiator / why now:** ...
-**Proof points:** [3, use placeholders if missing]
-**Tagline options:** [3]
-**Elevator pitch (2 sentences):** ...
-```
-
-## 3. Channel plan
-
-Pick channels the user can actually execute with their audience and resources. For each: channel, tactic, owner, asset needed, date. Consider: owned (email, blog, in-app, website), earned (press, communities like Product Hunt / Hacker News / Reddit / relevant Discords, influencers, partners), and paid (only if budget exists).
-
-For community launches, remind the user to follow each community's rules (e.g. no vote solicitation, genuine participation, disclose affiliation).
-
-## 4. Timeline
+Produire un bloc de messages dont tous les supports s'inspireront :
 
 ```markdown
-| When | Task | Owner | Status |
-| T-4 weeks | Finalize positioning, build waitlist page | | |
-| T-2 weeks | Draft assets, line up early users / testimonials | | |
-| T-1 week | Brief partners/press, schedule emails & posts, QA tracking | | |
-| Launch day | Publish, post, email, monitor & reply to every comment | | |
-| T+1 week | Follow-up content, thank-yous, retro | | |
+**Catégorie :** ce que c'est, avec les mots des clients
+**Client cible :** ...
+**Problème :** ...
+**Bénéfice clé (une ligne) :** ...
+**Différenciation / pourquoi maintenant :** ...
+**Preuves :** [3, espaces réservés si absentes]
+**Propositions de slogan :** [3]
+**Pitch (2 phrases) :** ...
 ```
 
-Adjust to the tier and the date.
+## 3. Plan de canaux
 
-## 5. Asset checklist
+Choisir des canaux réalistes compte tenu de l'audience et des moyens. Pour chacun : canal, tactique, responsable, support nécessaire, date. Penser aux canaux :
+- **propres** (e-mail, blog, annonce dans le produit, site),
+- **gagnés** (presse, communautés comme Product Hunt, Reddit, Discord ou Slack spécialisés, groupes LinkedIn et Facebook francophones, influenceurs, partenaires, écosystèmes locaux : French Tech, incubateurs, salons comme VivaTech),
+- **payants** (seulement si un budget existe).
 
-Landing page, announcement blog post, email(s), social posts, demo video/GIF, screenshots, press kit, FAQ, in-app announcement, docs/changelog, sales/support enablement. Offer to draft any of them using the `copywriting`, `email-campaigns`, `social-media`, and `seo-content` skills.
+Pour les lancements en communauté, rappeler de respecter les règles de chacune (pas de sollicitation de votes, vraie participation, transparence sur l'affiliation).
 
-## 6. Metrics
+Vérifier le calendrier : éviter les périodes creuses (mi-juillet à fin août en France, ponts de mai) et s'appuyer sur les temps forts utiles (voir `calendrier-commercial-fr`).
 
-Define one primary success metric with a target, 2–3 secondary metrics, and how each is tracked (UTMs per channel, analytics events). Schedule a retro.
+## 4. Rétroplanning
 
-Save the plan as `LAUNCH_PLAN.md` if the user wants a file.
+```markdown
+| Quand | Tâche | Responsable | Statut |
+| J-4 semaines | Finaliser le positionnement, créer la page liste d'attente | | |
+| J-2 semaines | Rédiger les supports, recruter les premiers utilisateurs / témoignages | | |
+| J-1 semaine | Briefer partenaires et presse, programmer e-mails et posts, tester le suivi | | |
+| Jour J | Publier, poster, envoyer, surveiller et répondre à chaque commentaire | | |
+| J+1 semaine | Contenus de suivi, remerciements, bilan | | |
+```
+
+Adapter au niveau et à la date.
+
+## 5. Liste des supports
+
+Page d'atterrissage, article d'annonce, e-mail(s), posts, vidéo ou GIF de démo, captures d'écran, kit presse et communiqué, FAQ, annonce dans le produit, documentation et changelog, supports pour les équipes vente et support, mentions légales et CGV à jour. Proposer d'en rédiger avec les skills `copywriting`, `email-campaigns`, `social-media` et `seo-content`, et de vérifier la conformité avec `conformite-marketing-fr`.
+
+## 6. Indicateurs
+
+Définir un indicateur principal avec un objectif chiffré, 2 ou 3 indicateurs secondaires, et la façon de les suivre (UTM par canal, événements analytics — dans le respect du consentement aux cookies). Prévoir un bilan.
+
+Enregistrer le plan dans `PLAN_DE_LANCEMENT.md` si l'utilisateur veut un fichier.
