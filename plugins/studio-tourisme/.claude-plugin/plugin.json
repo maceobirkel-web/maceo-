@@ -1,0 +1,9 @@
+{
+  "name": "studio-tourisme",
+  "version": "0.1.0",
+  "description": "Mène le questionnaire de découverte d'un client du studio tourisme et produit sa fiche client (brief de projet de site web).",
+  "author": {
+    "name": "Maceo Birkel"
+  },
+  "keywords": ["tourisme", "questionnaire", "fiche client", "brief", "site web"]
+}

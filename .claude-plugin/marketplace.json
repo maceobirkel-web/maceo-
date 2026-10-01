@@ -1,0 +1,16 @@
+{
+  "name": "maceo-plugins",
+  "owner": {
+    "name": "Maceo Birkel"
+  },
+  "metadata": {
+    "description": "Plugins Claude Code de Maceo Birkel"
+  },
+  "plugins": [
+    {
+      "name": "studio-tourisme",
+      "source": "./plugins/studio-tourisme",
+      "description": "Questionnaire client et fiche client pour le studio tourisme (création de sites web pour acteurs du tourisme)."
+    }
+  ]
+}
