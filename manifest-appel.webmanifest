@@ -1,0 +1,16 @@
+{
+  "id": "nouveau-client.html",
+  "name": "Après l'appel – Studio Tourisme",
+  "short_name": "Après l'appel",
+  "description": "Envoyer au client le récapitulatif et le lien de commande, juste après l'appel.",
+  "lang": "fr",
+  "start_url": "nouveau-client.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0F0C0A",
+  "theme_color": "#0F0C0A",
+  "icons": [
+    { "src": "assets/img/icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/img/icone-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
