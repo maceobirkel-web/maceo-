@@ -2978,3 +2978,280 @@ html:not(.js) [data-cookies] {
 .sprite {
   display: none;
 }
+
+/* ==========================================================================
+   Commande en ligne (commande.html, merci.html, nouveau-client.html)
+   ========================================================================== */
+[hidden] {
+  display: none !important;
+}
+
+html:not(.js) #formulaire-commande,
+html:not(.js) #lanceur {
+  display: none;
+}
+
+.page-commande {
+  padding: 40px 0 88px;
+}
+
+.conteneur.conteneur--etroit {
+  max-width: 720px;
+}
+
+.page-commande h1 {
+  margin-bottom: 12px;
+}
+
+.page-commande__intro {
+  margin: 0 0 28px;
+  color: var(--gris-texte);
+}
+
+/* Étapes 1-2-3 */
+.etapes-commande {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--gris-texte);
+}
+
+.etapes-commande li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--bordure);
+}
+
+.etapes-commande span {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  font-weight: 600;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.etapes-commande [aria-current="step"] {
+  color: var(--noir);
+  font-weight: 600;
+  border-color: var(--bleu);
+}
+
+.etapes-commande [aria-current="step"] span {
+  color: var(--encre);
+  background: var(--bleu);
+  border-color: var(--bleu);
+}
+
+.etapes-commande .est-fait {
+  color: var(--noir);
+  border-color: var(--noir);
+}
+
+/* Blocs du questionnaire */
+.formulaire.formulaire--commande {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.bloc-commande {
+  margin-bottom: 24px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+}
+
+@media (max-width: 560px) {
+  .bloc-commande {
+    padding: 22px 16px;
+  }
+}
+
+.bloc-commande h2 {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+}
+
+.bloc-commande h3 {
+  margin: 24px 0 8px;
+  font-size: 1rem;
+}
+
+.bloc-commande > :last-child {
+  margin-bottom: 0;
+}
+
+.champ.champ--court input {
+  max-width: 160px;
+}
+
+/* Récapitulatif */
+.recap {
+  margin-bottom: 24px;
+  padding: 18px 20px;
+  background: var(--gris-clair);
+  border-left: 4px solid var(--bleu);
+}
+
+.recap p {
+  margin: 0;
+}
+
+.recap__liste {
+  margin: 0 0 12px;
+}
+
+.recap__liste div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.recap__liste dt {
+  color: var(--gris-texte);
+}
+
+.recap__liste dd {
+  margin: 0;
+  text-align: right;
+}
+
+.recap .recap__contenu {
+  margin-bottom: 8px;
+}
+
+.recap .recap__mention {
+  font-size: 0.875rem;
+  color: var(--gris-texte);
+}
+
+/* Variantes des choix */
+.choix.choix--trois {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.choix.choix--colonne {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 480px) {
+  .choix.choix--trois {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cases à cocher */
+.case {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.case input {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin: 1px 0 0;
+  accent-color: var(--bleu);
+}
+
+.case input:focus-visible {
+  outline: 3px solid var(--bleu);
+  outline-offset: 2px;
+}
+
+.case label {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.case.case--centree {
+  align-items: center;
+  align-self: end;
+  min-height: 48px;
+}
+
+.champ__aide.case__note {
+  margin: -8px 0 24px 34px;
+}
+
+/* Page « merci » */
+.suite {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+
+.suite li {
+  margin-bottom: 10px;
+}
+
+.bloc-virement,
+.apercu-message {
+  margin: 0 0 16px;
+  padding: 14px 16px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--gris-clair);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  user-select: all;
+}
+
+.apercu-message {
+  user-select: text;
+}
+
+/* Page « nouveau client » */
+.page-lanceur {
+  padding-top: 24px;
+}
+
+.page-lanceur .formulaire {
+  margin-bottom: 24px;
+}
+
+.actions-envoi {
+  display: grid;
+  gap: 12px;
+}
+
+a.bouton[aria-disabled="true"] {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.lanceur__statut {
+  min-height: 1.5em;
+  margin: 8px 0 16px;
+  font-weight: 500;
+  color: #86EFAC;
+}
+
+#lanceur-lien {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  border: 1px solid #7A6A5C;
+  border-radius: var(--rayon);
+  background: var(--gris-clair);
+  color: var(--noir);
+}

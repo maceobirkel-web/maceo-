@@ -12,6 +12,9 @@ cgv.html                Conditions générales de vente (+ formulaire de rétrac
 cgu.html                Conditions générales d'utilisation du site
 confidentialite.html    Politique de confidentialité (RGPD, cookies)
 404.html                Page « introuvable »
+nouveau-client.html     Page interne (pour vous) : envoyer le lien de commande après un appel
+commande.html           Questionnaire de commande du client (non référencé)
+merci.html              Après la commande : paiement de l'acompte (non référencé)
 _headers, _redirects    Sécurité (HTTPS, en-têtes) pour Netlify
 vercel.json             Même chose pour Vercel
 .htaccess               Même chose pour un hébergeur Apache (OVH, o2switch…)
@@ -20,6 +23,8 @@ robots.txt, sitemap.xml Référencement
 assets/
   css/style.css         Toute la mise en forme (couleurs en haut du fichier)
   js/main.js            Menu mobile, vérification du formulaire, anti-spam, envoi
+  js/commande-config.js Réglages de la commande en ligne (liens Stripe, IBAN, adresse)
+  js/commande.js        Fonctionnement des 3 pages de commande
   js/consentement.js    Bandeau cookies + mesure d'audience (GoatCounter)
   js/animations.js      Animations de la page d'accueil (défilement, titre, prix, étapes)
   js/vendor/            Bibliothèque d'animation GSAP, hébergée sur le site
@@ -135,8 +140,94 @@ Ces points ne relèvent pas du site, mais ils conditionnent la validité des pag
 - **Compte bancaire dédié** : obligatoire en micro-entreprise dès que le chiffre d'affaires dépasse 10 000 € deux années de suite. Recommandé dès le départ.
 - **Assurance responsabilité civile professionnelle** : non obligatoire pour cette activité, mais recommandée.
 - **Devis et factures** : mentions obligatoires (EI, SIRET, « TVA non applicable, art. 293 B du CGI », pénalités de retard et indemnité de 40 € pour les clients professionnels).
-- **Démarrage anticipé** (article 9 des CGV) : prévoyez sur vos devis une case du type « Je demande que la prestation commence avant la fin du délai de rétractation de 14 jours », à faire cocher par les clients particuliers.
+- **Démarrage anticipé** (article 9 des CGV) : case prévue dans le questionnaire de commande en ligne (partie 7) ; pour un devis papier, prévoyez une case du type « Je demande que la prestation commence avant la fin du délai de rétractation de 14 jours », à faire cocher par les clients particuliers.
 - **Relecture juridique** : ces pages sont une base sérieuse, mais une relecture par un juriste ou votre CCI/CMA reste conseillée avant de les utiliser.
+
+## 7. Commande en ligne après un appel (onboarding automatique)
+
+### Comment ça marche
+
+1. **Vous** (fin d'appel, 20 secondes) : ouvrez `nouveau-client.html` sur votre iPhone, tapez le nom,
+   l'e-mail et le téléphone du client, choisissez le pack, puis **Envoyer par e-mail** ou **par SMS**.
+   Le message (récapitulatif de l'offre + lien personnel) est déjà rédigé, vous n'avez qu'à appuyer sur Envoyer.
+2. **Le client** ouvre le lien : le questionnaire est prérempli (nom, e-mail, pack, prix). Il renseigne son
+   logement, ses photos, coche les CGV (et, s'il est particulier, la case facultative « commencer avant
+   la fin des 14 jours »), puis valide.
+3. **Automatiquement** : vous recevez la commande complète par e-mail, le client en reçoit une copie
+   (elle vaut confirmation écrite), puis il arrive sur la page de paiement de l'acompte (carte via Stripe,
+   ou virement).
+4. **Stripe** vous prévient du paiement et envoie le reçu au client.
+5. **À la livraison validée** : rouvrez `nouveau-client.html`, choisissez « La demande de solde », envoyez.
+
+Ce qui reste manuel, volontairement : le déclenchement (vous seul savez que l'appel a abouti) et l'appui
+sur « Envoyer » (le message part de votre propre adresse Gmail, donc il arrive en boîte de réception et
+reste dans vos e-mails envoyés). Aucun compte n'est nécessaire pour cette étape.
+
+### À configurer une fois (depuis l'iPhone)
+
+Le site doit d'abord être en ligne (partie 3). Ensuite :
+
+**a) Raccourci sur l'écran d'accueil** : dans Safari, ouvrez `https://VOTRE-DOMAINE.fr/nouveau-client.html`,
+touchez Partager, puis « Sur l'écran d'accueil ». La page s'ouvre alors comme une application.
+
+**b) FormSubmit (réception des commandes, gratuit, sans compte)**
+1. Ouvrez votre propre lien de commande et passez une commande de test avec votre adresse e-mail.
+2. FormSubmit envoie un e-mail « Activate Form » à maceo.birkel@gmail.com : touchez le bouton d'activation.
+3. Repassez une commande de test : vous devez recevoir la commande, et la copie « client » sur l'adresse saisie.
+4. Facultatif : FormSubmit vous donne une adresse de remplacement (suite de lettres et chiffres) qui évite
+   d'afficher votre e-mail dans le code. Remplacez `formsubmit` dans `assets/js/commande-config.js`.
+
+**c) Stripe (paiement par carte)**
+1. Créez un compte sur https://dashboard.stripe.com (dans Safari, ou avec l'app Stripe), et activez les
+   paiements : identité, statut d'entrepreneur individuel, SIRET, IBAN pour recevoir l'argent.
+2. Menu **Liens de paiement** > **+ Nouveau**, produit « Acompte Essentiel », prix **29,70 €**, paiement unique.
+   Dans les options, cochez **Autoriser les clients à ajuster la quantité** et **Autoriser les codes promotionnels**.
+3. Recommencez pour les 5 autres liens :
+
+   | Lien | Prix pour 1 logement |
+   |---|---|
+   | Acompte Essentiel / Visibilité / Premium | 29,70 € / 74,70 € / 147 € |
+   | Solde Essentiel / Visibilité / Premium | 69,30 € / 174,30 € / 343 € |
+
+4. Offre de lancement : menu **Produits** > **Coupons** > **+ Nouveau**, 30 %, durée « une fois », puis un
+   **code promotionnel** `LANCEMENT` limité à 5 utilisations.
+5. Collez les 6 liens dans `assets/js/commande-config.js` (ou envoyez-les à Claude, qui les mettra en place).
+
+Frais Stripe : environ 1,5 % + 0,25 € par paiement avec une carte européenne (vérifiez sur leur page *Tarifs*).
+
+**Factures automatiques (Stripe)** : chaque paiement par carte peut produire sa facture, envoyée au client.
+1. Pour chacun des 6 liens de paiement : options du lien > cochez **Créer une facture après le paiement**
+   et **Collecter l'adresse du client** (et le nom de l'entreprise, pour les conciergeries).
+2. **Paramètres > Facturation > Factures** : choisissez la numérotation **sur l'ensemble du compte**
+   (numéros qui se suivent, comme l'exige la loi), et mettez en pied de page :
+   `Maceo Birkel EI - Studio Tourisme - SIRET [SIRET] - [ADRESSE] - TVA non applicable, art. 293 B du CGI.
+   Clients professionnels : pénalités de retard égales à 3 fois le taux d'intérêt légal, indemnité forfaitaire
+   de recouvrement de 40 €.`
+3. Stripe facture ce service (un petit pourcentage par facture payée, voir leur page *Tarifs*).
+Vous obtenez ainsi une facture d'acompte puis une facture de solde, chacune émise au moment du paiement.
+Un paiement par virement n'est pas facturé automatiquement : faites alors la facture à la main (Stripe,
+ou un logiciel de facturation gratuit).
+Facture électronique : les micro-entreprises devront émettre leurs factures entre professionnels en format
+électronique via une plateforme agréée à partir de septembre 2027. Pour les conciergeries, il faudra alors
+passer par un outil agréé ; vérifiez le calendrier sur impots.gouv.fr.
+
+**d) Virement (facultatif)** : renseignez titulaire, IBAN et BIC dans `assets/js/commande-config.js`.
+Ils s'affichent alors sur la page de paiement. Attention, ils sont visibles dans le code du site.
+
+Tant qu'un élément n'est pas configuré, il est simplement masqué : sans Stripe ni IBAN, la page de paiement
+indique au client que vous lui envoyez les coordonnées de paiement sous 24 h.
+
+### Points de vigilance
+
+- **Démarchage téléphonique des particuliers** : depuis le 11 août 2026, appeler un particulier pour lui
+  vendre une prestation exige son **accord préalable** (loi du 30 juin 2025). Appeler des conciergeries et
+  des professionnels pour leur activité reste possible. Les appels de prospection depuis un numéro en 06/07
+  sont aussi encadrés. Voir la fiche de la DGCCRF « Les règles du démarchage téléphonique ».
+- Après un appel, un particulier n'est engagé qu'une fois l'offre acceptée par écrit : c'est le rôle du
+  questionnaire (article L221-16 du Code de la consommation).
+- **Médiateur de la consommation** : toujours obligatoire avant de vendre à des particuliers (partie 6).
+- Les prix des packs sont recopiés dans `assets/js/commande-config.js` : modifiez-les aussi là si vous
+  changez les tarifs de la page d'accueil.
 
 ## Choix techniques
 
