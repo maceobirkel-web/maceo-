@@ -65,6 +65,24 @@
       .from(".comparatif", { autoAlpha: 0, y: 48, scale: 0.96, duration: 1.1 }, 0.35)
       .from(".comparatif__liste li", { autoAlpha: 0, x: -12, duration: 0.5, stagger: 0.05, ease: "power2.out" }, 0.8);
 
+    /* Photo de l'accroche : parallaxe discrète (fond uniquement, jamais le texte) */
+    gsap.to(".accroche__photo", {
+      yPercent: 8,
+      ease: "none",
+      scrollTrigger: { trigger: ".accroche", start: "top top", end: "bottom top", scrub: true }
+    });
+
+    /* Galerie : les photos se dévoilent en cascade */
+    gsap.from(".galerie__photo", {
+      autoAlpha: 0,
+      y: 40,
+      duration: 0.9,
+      stagger: 0.12,
+      ease: "power3.out",
+      clearProps: "transform",
+      scrollTrigger: { trigger: ".galerie__grille", start: "top 85%" }
+    });
+
     /* Léger parallaxe des halos de l'aurore */
     gsap.to(".aurore", {
       yPercent: 18,
