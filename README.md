@@ -170,6 +170,22 @@ touchez Partager, puis « Sur l'écran d'accueil ». La page s'ouvre alors comme
 
 Frais Stripe : environ 1,5 % + 0,25 € par paiement avec une carte européenne (vérifiez sur leur page *Tarifs*).
 
+**Factures automatiques (Stripe)** : chaque paiement par carte peut produire sa facture, envoyée au client.
+1. Pour chacun des 6 liens de paiement : options du lien > cochez **Créer une facture après le paiement**
+   et **Collecter l'adresse du client** (et le nom de l'entreprise, pour les conciergeries).
+2. **Paramètres > Facturation > Factures** : choisissez la numérotation **sur l'ensemble du compte**
+   (numéros qui se suivent, comme l'exige la loi), et mettez en pied de page :
+   `Maceo Birkel EI - Studio Tourisme - SIRET [SIRET] - [ADRESSE] - TVA non applicable, art. 293 B du CGI.
+   Clients professionnels : pénalités de retard égales à 3 fois le taux d'intérêt légal, indemnité forfaitaire
+   de recouvrement de 40 €.`
+3. Stripe facture ce service (un petit pourcentage par facture payée, voir leur page *Tarifs*).
+Vous obtenez ainsi une facture d'acompte puis une facture de solde, chacune émise au moment du paiement.
+Un paiement par virement n'est pas facturé automatiquement : faites alors la facture à la main (Stripe,
+ou un logiciel de facturation gratuit).
+Facture électronique : les micro-entreprises devront émettre leurs factures entre professionnels en format
+électronique via une plateforme agréée à partir de septembre 2027. Pour les conciergeries, il faudra alors
+passer par un outil agréé ; vérifiez le calendrier sur impots.gouv.fr.
+
 **d) Virement (facultatif)** : renseignez titulaire, IBAN et BIC dans `assets/js/commande-config.js`.
 Ils s'affichent alors sur la page de paiement. Attention, ils sont visibles dans le code du site.
 
