@@ -248,6 +248,7 @@ Le site s'ouvre ensuite en plein écran, sans barre d'adresse.
 ## Mise en ligne actuelle
 
 Le site est publié par GitHub Pages à l'adresse https://maceobirkel-web.github.io/maceo-/,
-depuis la branche `gh-pages`, qui ne contient que les fichiers du site (pas `.claude/`, `CLAUDE.md`,
-`.mcp.json` ni ce README). Pour publier une nouvelle version : copier les fichiers du site de `main`
-vers `gh-pages`.
+directement depuis la branche `main` (dossier racine). Toute modification fusionnée dans `main`
+est en ligne 1 à 2 minutes plus tard. La branche `gh-pages` n'est pas utilisée.
+Le dépôt étant public, les fichiers internes (`README.md`, `CLAUDE.md`, `.mcp.json`) sont aussi lisibles en ligne :
+n'y mettez jamais de mot de passe ni de clé (la clé 21st reste dans la variable `API_KEY_21ST`).
