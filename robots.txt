@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # À REMPLACER : votre nom de domaine définitif
-Sitemap: https://VOTRE-DOMAINE.fr/sitemap.xml
+Sitemap: https://maceobirkel-web.github.io/maceo-/sitemap.xml
