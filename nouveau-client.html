@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add("js");</script>
+  <title>Nouveau client | Studio Tourisme</title>
+  <!-- Page interne, pour Maceo uniquement : pas de référencement, aucun lien depuis le site. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="apple-mobile-web-app-title" content="Nouveau client">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta name="theme-color" content="#1F4FD1">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <main id="contenu" class="page-commande page-lanceur">
+    <div class="conteneur conteneur--etroit">
+      <h1>Après l'appel</h1>
+      <p class="page-commande__intro">Remplissez en 20 secondes, puis envoyez. Le client reçoit le récapitulatif de l'offre et le lien de commande. La suite (questionnaire, copie par e-mail, acompte) se fait sans vous.</p>
+
+      <noscript><p class="encadre">Cette page a besoin de JavaScript.</p></noscript>
+
+      <form class="formulaire" id="lanceur" novalidate>
+        <fieldset class="champ">
+          <legend>Je veux envoyer</legend>
+          <div class="choix">
+            <div class="choix__option">
+              <input type="radio" id="mode-nouveau" name="mode" value="nouveau" checked>
+              <label for="mode-nouveau">Le lien de commande</label>
+            </div>
+            <div class="choix__option">
+              <input type="radio" id="mode-solde" name="mode" value="solde">
+              <label for="mode-solde">La demande de solde</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="champ">
+          <label for="lanceur-nom">Nom du client</label>
+          <input type="text" id="lanceur-nom" name="nom" autocomplete="off" autocapitalize="words">
+        </div>
+        <div class="formulaire__ligne">
+          <div class="champ">
+            <label for="lanceur-email">E-mail</label>
+            <input type="email" id="lanceur-email" name="email" autocomplete="off" autocapitalize="off" inputmode="email">
+          </div>
+          <div class="champ">
+            <label for="lanceur-tel">Téléphone</label>
+            <input type="tel" id="lanceur-tel" name="tel" autocomplete="off" inputmode="tel">
+          </div>
+        </div>
+
+        <fieldset class="champ">
+          <legend>Pack</legend>
+          <div class="choix choix--trois">
+            <div class="choix__option">
+              <input type="radio" id="lanceur-essentiel" name="pack" value="essentiel">
+              <label for="lanceur-essentiel">Essentiel</label>
+            </div>
+            <div class="choix__option">
+              <input type="radio" id="lanceur-visibilite" name="pack" value="visibilite" checked>
+              <label for="lanceur-visibilite">Visibilité</label>
+            </div>
+            <div class="choix__option">
+              <input type="radio" id="lanceur-premium" name="pack" value="premium">
+              <label for="lanceur-premium">Premium</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="formulaire__ligne">
+          <div class="champ">
+            <label for="lanceur-logements">Logements</label>
+            <input type="number" id="lanceur-logements" name="logements" min="1" max="99" step="1" value="1" inputmode="numeric">
+          </div>
+          <div class="case case--centree">
+            <input type="checkbox" id="lanceur-lancement" name="lancement" value="oui">
+            <label for="lanceur-lancement">Offre de lancement (-30 %)</label>
+          </div>
+        </div>
+      </form>
+
+      <section class="bloc-commande" id="lanceur-resultat" aria-labelledby="titre-envoi" hidden>
+        <h2 id="titre-envoi">Envoyer</h2>
+        <p class="encadre" id="lanceur-avertissement" hidden></p>
+
+        <div class="actions-envoi">
+          <a class="bouton bouton--large" id="lanceur-mail" aria-disabled="true">Envoyer par e-mail</a>
+          <a class="bouton bouton--secondaire bouton--large" id="lanceur-sms" aria-disabled="true">Envoyer par SMS</a>
+          <button class="bouton bouton--secondaire bouton--large" id="lanceur-partage" type="button" hidden>WhatsApp ou autre…</button>
+          <button class="bouton bouton--secondaire bouton--large" id="lanceur-copie" type="button">Copier le message</button>
+        </div>
+        <p class="lanceur__statut" id="lanceur-statut" role="status" aria-live="polite"></p>
+
+        <div class="champ" id="lanceur-lien-bloc">
+          <label for="lanceur-lien">Lien seul</label>
+          <input type="text" id="lanceur-lien" readonly>
+        </div>
+
+        <h3 data-mode="nouveau">Message envoyé au client</h3>
+        <h3 data-mode="solde" hidden>Message de demande de solde</h3>
+        <pre class="apercu-message" id="lanceur-apercu" tabindex="0"></pre>
+
+        <button class="bouton bouton--secondaire bouton--petit" id="lanceur-reinitialiser" type="button">Nouveau client</button>
+      </section>
+    </div>
+  </main>
+
+  <script src="assets/js/commande-config.js" defer></script>
+  <script src="assets/js/commande.js" defer></script>
+</body>
+</html>

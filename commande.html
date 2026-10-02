@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add("js");</script>
+  <title>Valider votre commande | Studio Tourisme</title>
+  <meta name="description" content="Questionnaire de commande Studio Tourisme : informations sur votre logement, photos et validation de la commande.">
+  <!-- Page réservée aux clients qui ont reçu le lien : pas de référencement. -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta name="theme-color" content="#1F4FD1">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <div class="conteneur entete__barre">
+      <a class="logo" href="index.html"><span class="logo__carre" aria-hidden="true"></span>Studio Tourisme</a>
+    </div>
+  </header>
+
+  <main id="contenu" class="page-commande">
+    <div class="conteneur conteneur--etroit">
+      <ol class="etapes-commande" aria-label="Étapes de la commande">
+        <li aria-current="step"><span>1</span>Questionnaire</li>
+        <li><span>2</span>Acompte</li>
+        <li><span>3</span>Livraison</li>
+      </ol>
+
+      <h1>Valider votre commande</h1>
+      <p class="page-commande__intro">Environ 5 minutes. Ces informations nous permettent de démarrer sans aller-retour. Rien n'est dû tant que vous n'avez pas validé ce formulaire.</p>
+
+      <noscript>
+        <p class="encadre">Ce formulaire a besoin de JavaScript pour calculer votre récapitulatif. Activez-le, ou écrivez-nous à
+          <a href="mailto:maceo.birkel@gmail.com">maceo.birkel@gmail.com</a> pour commander par e-mail.</p>
+      </noscript>
+
+      <!-- Envoi vers FormSubmit (adresse réglée dans assets/js/commande-config.js).
+           Le client reçoit automatiquement une copie de sa commande par e-mail (_autoresponse). -->
+      <form class="formulaire formulaire--commande" id="formulaire-commande" action="https://formsubmit.co/maceo.birkel@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nouvelle commande Studio Tourisme">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="">
+        <input type="hidden" name="_autoresponse" value="Bonjour, merci pour votre commande auprès de Studio Tourisme. Vous trouverez ci-dessous une copie des informations transmises, qui vaut confirmation de votre commande. Nous démarrons dès réception de l'acompte et de vos photos, ou à la fin du délai de rétractation de 14 jours si vous êtes un particulier et n'avez pas demandé de démarrage anticipé. Conditions générales de vente : voir la page cgv.html du site Studio Tourisme. Pour toute question, répondez simplement à cet e-mail ou appelez le 07 59 53 17 84. Maceo Birkel, Studio Tourisme.">
+        <input type="hidden" name="pack" value="">
+        <input type="hidden" name="offre_lancement" value="">
+        <input type="hidden" name="prix_total" value="">
+        <input type="hidden" name="acompte" value="">
+        <input type="hidden" name="solde" value="">
+        <p class="pot-de-miel" aria-hidden="true">
+          <label>Ne pas remplir <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
+        </p>
+
+        <!-- ===== Récapitulatif ===== -->
+        <section class="bloc-commande" aria-labelledby="titre-recap">
+          <h2 id="titre-recap">Votre commande</h2>
+          <div class="recap" id="commande-recap" aria-live="polite"></div>
+
+          <fieldset class="champ">
+            <legend>Pack <span class="obligatoire" aria-hidden="true">*</span></legend>
+            <div class="choix choix--trois">
+              <div class="choix__option">
+                <input type="radio" id="pack-essentiel" name="pack_cle" value="essentiel" required>
+                <label for="pack-essentiel">Essentiel</label>
+              </div>
+              <div class="choix__option">
+                <input type="radio" id="pack-visibilite" name="pack_cle" value="visibilite">
+                <label for="pack-visibilite">Visibilité</label>
+              </div>
+              <div class="choix__option">
+                <input type="radio" id="pack-premium" name="pack_cle" value="premium">
+                <label for="pack-premium">Premium</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="champ champ--court">
+            <label for="nombre_logements">Nombre de logements <span class="obligatoire" aria-hidden="true">*</span></label>
+            <input type="number" id="nombre_logements" name="nombre_logements" min="1" max="99" step="1" value="1" inputmode="numeric" required>
+          </div>
+        </section>
+
+        <!-- ===== Coordonnées ===== -->
+        <section class="bloc-commande" aria-labelledby="titre-coordonnees">
+          <h2 id="titre-coordonnees">Vos coordonnées</h2>
+          <p class="champ__aide champ__aide--intro">Les champs marqués <span class="obligatoire" aria-hidden="true">*</span> sont obligatoires.</p>
+
+          <fieldset class="champ">
+            <legend>Vous commandez en tant que <span class="obligatoire" aria-hidden="true">*</span></legend>
+            <div class="choix">
+              <div class="choix__option">
+                <input type="radio" id="statut-particulier" name="statut_client" value="particulier" required>
+                <label for="statut-particulier">Particulier</label>
+              </div>
+              <div class="choix__option">
+                <input type="radio" id="statut-pro" name="statut_client" value="professionnel">
+                <label for="statut-pro">Professionnel (conciergerie, société)</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="champ">
+            <label for="nom">Nom et prénom <span class="obligatoire" aria-hidden="true">*</span></label>
+            <input type="text" id="nom" name="nom" autocomplete="name" required>
+          </div>
+
+          <div data-statut="professionnel" hidden>
+            <div class="formulaire__ligne">
+              <div class="champ">
+                <label for="raison_sociale">Raison sociale <span class="obligatoire" aria-hidden="true">*</span></label>
+                <input type="text" id="raison_sociale" name="raison_sociale" autocomplete="organization" required>
+              </div>
+              <div class="champ">
+                <label for="siret">SIRET</label>
+                <input type="text" id="siret" name="siret" inputmode="numeric" autocomplete="off">
+              </div>
+            </div>
+          </div>
+
+          <div class="formulaire__ligne">
+            <div class="champ">
+              <label for="email">E-mail <span class="obligatoire" aria-hidden="true">*</span></label>
+              <span class="champ__aide" id="aide-email">Vous y recevrez la copie de votre commande.</span>
+              <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="aide-email">
+            </div>
+            <div class="champ">
+              <label for="telephone">Téléphone <span class="obligatoire" aria-hidden="true">*</span></label>
+              <span class="champ__aide" id="aide-telephone">Pour vous joindre pendant la prestation.</span>
+              <input type="tel" id="telephone" name="telephone" autocomplete="tel" inputmode="tel" required aria-describedby="aide-telephone">
+            </div>
+          </div>
+
+          <div class="champ">
+            <label for="adresse">Adresse de facturation <span class="obligatoire" aria-hidden="true">*</span></label>
+            <textarea id="adresse" name="adresse_facturation" autocomplete="street-address" rows="3" required></textarea>
+          </div>
+        </section>
+
+        <!-- ===== Logement ===== -->
+        <section class="bloc-commande" aria-labelledby="titre-logement">
+          <h2 id="titre-logement">Votre logement</h2>
+          <p class="champ__aide champ__aide--intro">Plusieurs logements ? Remplissez pour le premier, nous vous contacterons pour les suivants.</p>
+
+          <div class="champ">
+            <label for="annonce">Lien de l'annonce <span class="obligatoire" aria-hidden="true">*</span></label>
+            <span class="champ__aide" id="aide-annonce">Airbnb, Booking ou Abritel. Exemple : https://www.airbnb.fr/rooms/…</span>
+            <input type="url" id="annonce" name="lien_annonce" inputmode="url" placeholder="https://" required aria-describedby="aide-annonce">
+          </div>
+
+          <div class="formulaire__ligne">
+            <div class="champ">
+              <label for="type_logement">Type de logement <span class="obligatoire" aria-hidden="true">*</span></label>
+              <span class="champ__aide" id="aide-type">Appartement, chalet, studio…</span>
+              <input type="text" id="type_logement" name="type_logement" required aria-describedby="aide-type">
+            </div>
+            <div class="champ">
+              <label for="commune">Commune <span class="obligatoire" aria-hidden="true">*</span></label>
+              <span class="champ__aide" id="aide-commune">Et quartier ou station si utile.</span>
+              <input type="text" id="commune" name="commune" required aria-describedby="aide-commune">
+            </div>
+          </div>
+
+          <div class="champ">
+            <label for="points_forts">Ce que vos voyageurs apprécient le plus <span class="obligatoire" aria-hidden="true">*</span></label>
+            <span class="champ__aide" id="aide-points">Vue, calme, proximité des pistes ou du lac, équipements… Uniquement ce qui existe réellement.</span>
+            <textarea id="points_forts" name="points_forts" rows="4" required aria-describedby="aide-points"></textarea>
+          </div>
+
+          <div class="champ">
+            <label for="a_eviter">Ce qu'il ne faut pas montrer ou promettre</label>
+            <span class="champ__aide" id="aide-eviter">Une pièce en travaux, un équipement en panne, un voisinage bruyant à certaines heures…</span>
+            <textarea id="a_eviter" name="a_eviter" rows="3" aria-describedby="aide-eviter"></textarea>
+          </div>
+
+          <div class="champ">
+            <label for="voyageurs">Vos voyageurs habituels</label>
+            <span class="champ__aide" id="aide-voyageurs">Familles, couples, skieurs, télétravailleurs…</span>
+            <input type="text" id="voyageurs" name="voyageurs_habituels" aria-describedby="aide-voyageurs">
+          </div>
+
+          <div data-packs="visibilite premium" hidden>
+            <fieldset class="champ">
+              <legend>Ambiance souhaitée pour la vidéo</legend>
+              <div class="choix choix--trois">
+                <div class="choix__option">
+                  <input type="radio" id="ambiance-calme" name="ambiance_video" value="Calme et posée">
+                  <label for="ambiance-calme">Calme</label>
+                </div>
+                <div class="choix__option">
+                  <input type="radio" id="ambiance-chaleureuse" name="ambiance_video" value="Chaleureuse">
+                  <label for="ambiance-chaleureuse">Chaleureuse</label>
+                </div>
+                <div class="choix__option">
+                  <input type="radio" id="ambiance-dynamique" name="ambiance_video" value="Dynamique">
+                  <label for="ambiance-dynamique">Dynamique</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div data-packs="premium" hidden>
+            <div class="champ">
+              <label for="domaine">Nom de domaine souhaité pour le site</label>
+              <span class="champ__aide" id="aide-domaine">Exemple : chalet-les-aravis.fr. Laissez vide si vous n'avez pas d'idée.</span>
+              <input type="text" id="domaine" name="nom_de_domaine" aria-describedby="aide-domaine">
+            </div>
+            <div class="champ">
+              <label for="contact_reservation">Où recevoir les demandes de réservation ? <span class="obligatoire" aria-hidden="true">*</span></label>
+              <span class="champ__aide" id="aide-contact-resa">E-mail et, si vous le souhaitez, téléphone à afficher sur le site.</span>
+              <input type="text" id="contact_reservation" name="contact_reservation" required aria-describedby="aide-contact-resa">
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Photos ===== -->
+        <section class="bloc-commande" aria-labelledby="titre-photos">
+          <h2 id="titre-photos">Vos photos</h2>
+          <p class="champ__aide champ__aide--intro">Les photos d'origine, en pleine qualité, donnent un meilleur résultat que celles de l'annonce.</p>
+
+          <fieldset class="champ">
+            <legend>Comment nous les transmettre ? <span class="obligatoire" aria-hidden="true">*</span></legend>
+            <div class="choix choix--colonne">
+              <div class="choix__option">
+                <input type="radio" id="photos-lien" name="mode_photos" value="lien" required>
+                <label for="photos-lien">J'ai un lien de partage (iCloud, Google Photos, Drive, WeTransfer)</label>
+              </div>
+              <div class="choix__option">
+                <input type="radio" id="photos-mail" name="mode_photos" value="Envoi par e-mail ou WhatsApp">
+                <label for="photos-mail">Je les envoie par e-mail ou WhatsApp</label>
+              </div>
+              <div class="choix__option">
+                <input type="radio" id="photos-annonce" name="mode_photos" value="Utiliser celles de l'annonce">
+                <label for="photos-annonce">Utilisez celles de mon annonce</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="champ" id="bloc-lien-photos" hidden>
+            <label for="lien_photos">Lien vers vos photos <span class="obligatoire" aria-hidden="true">*</span></label>
+            <span class="champ__aide" id="aide-lien-photos">Sur iPhone : app Photos, sélectionnez les photos, Partager, puis « Copier le lien iCloud ».</span>
+            <input type="url" id="lien_photos" name="lien_photos" inputmode="url" placeholder="https://" required aria-describedby="aide-lien-photos">
+          </div>
+
+          <div class="case">
+            <input type="checkbox" id="droits_photos" name="droits_photos" value="Oui" required>
+            <label for="droits_photos">Je suis titulaire des droits sur ces photos, ou j'ai l'accord de leur auteur pour qu'elles soient retouchées et utilisées en vidéo (article 11 des CGV). <span class="obligatoire" aria-hidden="true">*</span></label>
+          </div>
+        </section>
+
+        <!-- ===== Validation ===== -->
+        <section class="bloc-commande" aria-labelledby="titre-validation">
+          <h2 id="titre-validation">Validation</h2>
+
+          <div class="champ">
+            <label for="remarques">Une précision ou une question ?</label>
+            <textarea id="remarques" name="remarques" rows="3"></textarea>
+          </div>
+
+          <div class="case">
+            <input type="checkbox" id="cgv" name="acceptation_cgv" value="Bon pour accord : devis et CGV acceptés" required>
+            <label for="cgv">J'ai lu et j'accepte les <a href="cgv.html" target="_blank" rel="noopener">conditions générales de vente</a> (nouvel onglet) et le récapitulatif ci-dessus. Je donne mon accord pour cette commande. <span class="obligatoire" aria-hidden="true">*</span></label>
+          </div>
+
+          <div data-statut="particulier" hidden>
+            <div class="case">
+              <input type="checkbox" id="demarrage_anticipe" name="demarrage_anticipe" value="Oui : démarrage avant la fin du délai de 14 jours demandé">
+              <label for="demarrage_anticipe">Facultatif : je demande que la prestation commence avant la fin du délai de rétractation de 14 jours. Si je me rétracte ensuite, je paierai le travail déjà réalisé. Si la prestation est entièrement livrée avant la fin du délai, je reconnais perdre mon droit de rétractation (article 9 des CGV).</label>
+            </div>
+            <p class="champ__aide case__note">Sans cette case, nous commençons à l'issue du délai de 14 jours. Vous pouvez vous rétracter pendant ce délai avec le <a href="cgv.html#annexe" target="_blank" rel="noopener">formulaire prévu en annexe des CGV</a>.</p>
+          </div>
+
+          <button class="bouton bouton--large" type="submit" data-texte="Valider ma commande avec obligation de paiement">Valider ma commande avec obligation de paiement</button>
+          <p class="formulaire__rgpd">Après validation, une vérification anti-robots peut s'afficher, puis vous accédez au paiement de l'acompte. Vos données servent uniquement à réaliser la prestation : voir notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
+        </section>
+      </form>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied__bas pied__bas--compact">
+        <p>© 2026 Studio Tourisme · <a href="tel:+33759531784">07&nbsp;59&nbsp;53&nbsp;17&nbsp;84</a></p>
+        <ul class="pied__legal">
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="cgv.html">Conditions générales de vente</a></li>
+          <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/commande-config.js" defer></script>
+  <script src="assets/js/commande.js" defer></script>
+</body>
+</html>

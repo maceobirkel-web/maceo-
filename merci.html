@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add("js");</script>
+  <title>Commande enregistrée | Studio Tourisme</title>
+  <meta name="description" content="Votre commande Studio Tourisme est enregistrée. Dernière étape : le règlement de l'acompte.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta name="theme-color" content="#1F4FD1">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <div class="conteneur entete__barre">
+      <a class="logo" href="index.html"><span class="logo__carre" aria-hidden="true"></span>Studio Tourisme</a>
+    </div>
+  </header>
+
+  <main id="contenu" class="page-commande">
+    <div class="conteneur conteneur--etroit" id="merci">
+      <ol class="etapes-commande" aria-label="Étapes de la commande">
+        <li class="est-fait"><span>1</span>Questionnaire</li>
+        <li aria-current="step"><span>2</span>Acompte</li>
+        <li><span>3</span>Livraison</li>
+      </ol>
+
+      <h1>Merci, votre commande est enregistrée</h1>
+      <p class="page-commande__intro">Une copie de vos réponses vient de vous être envoyée par e-mail. Pensez à vérifier vos courriers indésirables.</p>
+
+      <section class="bloc-commande" id="merci-paiement" aria-labelledby="titre-acompte">
+        <h2 id="titre-acompte">Dernière étape : l'acompte de <span data-montant="acompte"></span></h2>
+        <p id="merci-recap"></p>
+
+        <div id="merci-stripe" hidden>
+          <a class="bouton bouton--large" id="merci-stripe-lien" href="#" rel="noopener">Payer l'acompte par carte</a>
+          <p class="champ__aide">Paiement sécurisé par Stripe. Vous recevez un reçu par e-mail.</p>
+          <p class="encadre" id="merci-quantite" hidden>Sur la page de paiement, indiquez <strong id="merci-quantite-n"></strong> dans le champ « quantité » (un acompte par logement).</p>
+        </div>
+
+        <div id="merci-virement" hidden>
+          <h3>Ou par virement</h3>
+          <pre class="bloc-virement" id="merci-virement-texte"></pre>
+        </div>
+
+        <p class="encadre" id="merci-manuel" hidden>Nous vous envoyons les coordonnées de paiement par e-mail sous 24 h.</p>
+      </section>
+
+      <section class="bloc-commande" id="merci-inconnu" hidden>
+        <h2>Votre commande nous est bien parvenue</h2>
+        <p>Nous vous recontactons sous 24 h pour le règlement de l'acompte.</p>
+      </section>
+
+      <section class="bloc-commande" aria-labelledby="titre-suite">
+        <h2 id="titre-suite">La suite</h2>
+        <ol class="suite">
+          <li><strong>Démarrage.</strong>
+            <span data-demarrage="immediat" hidden>Dès réception de l'acompte et de vos photos, comme vous l'avez demandé.</span>
+            <span data-demarrage="apres14j" hidden>À la fin du délai de rétractation de 14 jours, comme prévu par la loi. Pour commencer plus tôt, répondez à l'e-mail de confirmation en le demandant expressément.</span>
+            <span data-demarrage="pro" hidden>Dès réception de l'acompte et de vos photos.</span>
+          </li>
+          <li><strong>Livraison sous <span id="merci-delai"></span></strong> à partir de ce moment, par e-mail.</li>
+          <li><strong>Vos retours.</strong> Deux séries de modifications sont incluses, jusqu'à votre validation.</li>
+          <li><strong>Solde et fichiers définitifs.</strong> Après validation, vous réglez le solde et recevez les fichiers en pleine qualité.</li>
+        </ol>
+        <p>Une question ? Appelez le <a href="tel:+33759531784">07&nbsp;59&nbsp;53&nbsp;17&nbsp;84</a> ou écrivez à <a href="mailto:maceo.birkel@gmail.com">maceo.birkel@gmail.com</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied__bas pied__bas--compact">
+        <p>© 2026 Studio Tourisme</p>
+        <ul class="pied__legal">
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="cgv.html">Conditions générales de vente</a></li>
+          <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/commande-config.js" defer></script>
+  <script src="assets/js/commande.js" defer></script>
+</body>
+</html>
