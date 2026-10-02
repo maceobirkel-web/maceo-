@@ -7,6 +7,10 @@ window.STUDIO_COMMANDE = {
      de remplacement (une suite de lettres et chiffres) : collez-la ici à la place de l'e-mail. */
   formsubmit: "maceo.birkel@gmail.com",
 
+  /* Robot Make (scénario « Commande client ») : reçoit une copie de chaque commande validée,
+     pour créer le dossier client et lancer la production après l'acompte. */
+  make: "https://hook.eu1.make.com/ntf76j2ac8sbwfe1a0vld88gqg1lf5vu",
+
   /* Liens de paiement Stripe (Payment Links), un par pack.
      acompte = 30 % du prix d'un logement ; solde = 70 %. Cochez « quantité modifiable » dans Stripe. */
   stripe: {
