@@ -241,6 +241,36 @@
   /* ==========================================================================
      2. Page « commande » (pour le client)
      ========================================================================== */
+  /* Copie de la commande vers le robot Make, en parallèle de FormSubmit.
+     sendBeacon : l'envoi continue même si la page change, et ne bloque jamais le client. */
+  var envoyerAuRobot = function (formulaire, c, statut, demarrage) {
+    if (!estConfigure(CONFIG.make) || !navigator.sendBeacon) return;
+    if (formulaire.elements._honey && formulaire.elements._honey.value) return;
+
+    var maintenant = new Date();
+    var deuxChiffres = function (n) { return (n < 10 ? "0" : "") + n; };
+    var donnees = new URLSearchParams();
+    donnees.append("reference",
+      "ST-" + maintenant.getFullYear() + deuxChiffres(maintenant.getMonth() + 1) + deuxChiffres(maintenant.getDate()) +
+      "-" + deuxChiffres(maintenant.getHours()) + deuxChiffres(maintenant.getMinutes()) +
+      "-" + Math.random().toString(36).slice(2, 6).toUpperCase());
+    donnees.append("date_commande", maintenant.toISOString());
+
+    /* Tous les champs remplis par le client (les champs techniques commencent par « _ ») */
+    new FormData(formulaire).forEach(function (valeur, nom) {
+      if (nom.charAt(0) !== "_" && typeof valeur === "string") donnees.append(nom, valeur);
+    });
+
+    /* Valeurs calculées, en chiffres, plus simples à utiliser dans Make */
+    donnees.append("statut", statut);
+    donnees.append("demarrage", demarrage); /* pro | immediat | apres14j */
+    donnees.append("montant_total", String(c.total));
+    donnees.append("montant_acompte", String(c.acompte));
+    donnees.append("montant_solde", String(c.solde));
+
+    try { navigator.sendBeacon(CONFIG.make, donnees); } catch (erreur) { /* le robot est un bonus : la commande part quand même */ }
+  };
+
   var initCommande = function (formulaire) {
     var lancement = parametres.get("l") === "1";
     var recap = $("#commande-recap");
@@ -329,6 +359,8 @@
       formulaire.elements._next.value = urlPage("merci.html", {
         p: c.cle, n: c.n, l: c.lancement ? "1" : "", email: email, d: demarrage
       });
+
+      envoyerAuRobot(formulaire, c, statut, demarrage);
 
       var bouton = $('button[type="submit"]', formulaire);
       bouton.disabled = true;
