@@ -252,3 +252,33 @@ directement depuis la branche `main` (dossier racine). Toute modification fusion
 est en ligne 1 à 2 minutes plus tard. La branche `gh-pages` n'est pas utilisée.
 Le dépôt étant public, les fichiers internes (`README.md`, `CLAUDE.md`, `.mcp.json`) sont aussi lisibles en ligne :
 n'y mettez jamais de mot de passe ni de clé (la clé 21st reste dans la variable `API_KEY_21ST`).
+
+## 8. Automatisation de la production (Make) — état au 2 octobre 2026
+
+**Objectif** : après l'appel et le « oui » du client, tout s'enchaîne sans intervention, jusqu'à la vérification finale par Maceo.
+
+### Déjà en place
+- **Make.com** : compte gratuit, région EU (`eu1.make.com`), connecté avec maceo.birkel@gmail.com.
+- **Scénario « Integration Webhooks »** (à renommer « Commande client »), activé « Immediately as data arrives » :
+  1. **Webhook** « Commande Studio Tourisme » : `https://hook.eu1.make.com/ntf76j2ac8sbwfe1a0vld88gqg1lf5vu`
+     (renseigné dans `assets/js/commande-config.js`, clé `make`). `commande.js` y envoie chaque commande validée
+     (sendBeacon) avec une référence `ST-AAAAMMJJ-HHMM-XXXX`, les montants en chiffres et `demarrage`
+     (`pro` / `immediat` / `apres14j`).
+  2. **Google Drive — Create a Folder** : dans « Studio Tourisme » (My Drive), nom `{{1.reference}} - {{1.nom}} - {{1.commune}}`.
+  3. **Google Sheets — Add a Row** : classeur « studio tourisme », feuille « Feuille 1 », 18 colonnes
+     Référence · Date · Nom · E-mail · Téléphone · Statut · Pack · Logements · Total · Acompte · Solde · Commune ·
+     Lien annonce · Lien photos · Démarrage · Dossier Drive (`{{2.webViewLink}}`) · Acompte reçu (« Non ») · État (« Commande reçue »).
+- Testé de bout en bout le 2 octobre 2026 : dossier et ligne créés.
+
+### Prochaines étapes
+1. **Déclenchement de la production** : un 2ᵉ scénario surveille le tableau ; quand Maceo passe « Acompte reçu » à « Oui »
+   (en attendant Stripe, qui nécessite le SIRET), il lance la production.
+   Règle des 14 jours : `apres14j` → attendre 14 jours après la commande avant de lancer les IA.
+2. **Photos du client** : page de dépôt sur le site (les liens iCloud/Google Photos ne se téléchargent pas toujours automatiquement).
+3. **IA** (comptes à créer par Maceo, clés API à coller uniquement dans Make, jamais dans le dépôt public) :
+   - vidéo : **fal.ai** (Kling 3.0 ; Veo 3.1 en option Premium) ;
+   - retouche : **Autoenhance.ai**, *sans* remplacement de ciel ni home staging virtuel ;
+   - textes et traduction : API Claude (`claude-opus-5-5`).
+4. **Vérification** : notification à Maceo, validation d'un clic, puis livraison au client et lien de solde.
+   Vérification systématique des vidéos (les modèles génératifs peuvent inventer des éléments).
+5. **Budget** visé : 150 €/mois (Make ~11 $/mois en offre Core quand nécessaire).
