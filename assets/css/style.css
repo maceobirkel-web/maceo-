@@ -3255,3 +3255,27 @@ a.bouton[aria-disabled="true"] {
   background: var(--gris-clair);
   color: var(--noir);
 }
+
+/* ---------- Bandeau slogan : capitales espacées, séparateur en losange ---------- */
+.bandeau {
+  padding: 18px 0;
+}
+
+.bandeau ul {
+  gap: 56px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.bandeau li {
+  gap: 56px;
+}
+
+.bandeau li::after {
+  width: 7px;
+  height: 7px;
+  border-radius: 0;
+  transform: rotate(45deg);
+}

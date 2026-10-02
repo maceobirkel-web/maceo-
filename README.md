@@ -237,3 +237,17 @@ indique au client que vous lui envoyez les coordonnées de paiement sous 24 h.
 - Vitesse mesurée avec Lighthouse le 2026-10-01 (page d'accueil) : 95/100 sur mobile, 100/100 sur ordinateur ; accessibilité, bonnes pratiques et SEO : 100/100.
 - Accessibilité : balises sémantiques, lien d'évitement, labels sur tous les champs, contrastes AA, FAQ en `<details>` natifs utilisables au clavier, menu mobile avec `aria-expanded`. Vérifié avec axe-core (0 erreur) et html-validate.
 - Sans JavaScript, le site reste utilisable : le menu s'affiche en entier, tout le contenu est visible sans animation et le formulaire s'envoie normalement vers Formspree.
+
+## Icône sur l'écran d'accueil (iPhone et Android)
+
+Le site peut s'installer comme une application : `manifest.webmanifest` (nom, couleurs, icônes)
+et les icônes `assets/img/apple-touch-icon.png` (180 px), `icone-192.png` et `icone-512.png`.
+Sur iPhone : ouvrir le site dans **Safari** → bouton **Partager** → **Sur l'écran d'accueil**.
+Le site s'ouvre ensuite en plein écran, sans barre d'adresse.
+
+## Mise en ligne actuelle
+
+Le site est publié par GitHub Pages à l'adresse https://maceobirkel-web.github.io/maceo-/,
+depuis la branche `gh-pages`, qui ne contient que les fichiers du site (pas `.claude/`, `CLAUDE.md`,
+`.mcp.json` ni ce README). Pour publier une nouvelle version : copier les fichiers du site de `main`
+vers `gh-pages`.
