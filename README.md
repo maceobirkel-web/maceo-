@@ -270,6 +270,20 @@ n'y mettez jamais de mot de passe ni de clé (la clé 21st reste dans la variabl
      Lien annonce · Lien photos · Démarrage · Dossier Drive (`{{2.webViewLink}}`) · Acompte reçu (« Non ») · État (« Commande reçue »).
 - Testé de bout en bout le 2 octobre 2026 : dossier et ligne créés.
 
+### Vidéo IA : où on en est (2 octobre 2026, soir)
+- Compte **fal.ai** créé (type « Personal », connexion Google maceo.birkel@gmail.com). Crédit à ajouter dans Billing (20 € prévus).
+- Modèle retenu : **`fal-ai/kling-video/v3/pro/image-to-video`** (Kling 3.0 Pro, image vers vidéo).
+  Variante plus rapide à comparer plus tard : `fal-ai/kling-video/v3/turbo/pro/image-to-video`.
+- **Test manuel à faire** dans l'interface fal.ai avant d'automatiser :
+  - image de départ (`start_image_url`) : `https://maceobirkel-web.github.io/maceo-/assets/img/photos/chalet-vue-montagne.jpg`
+  - prompt : `Slow, smooth cinematic camera push-in. Keep the room exactly as in the photo: same furniture, same objects, same windows, same view, same layout. Do not add, remove or change anything. Natural light, realistic, stable, no distortion.`
+  - negative prompt : `new objects, extra furniture, people, animals, text, watermark, morphing, warping, distortion, melting, changing walls, changing view, flicker`
+  - durée 5 s, audio désactivé.
+  - À juger : beauté du rendu, et surtout **rien d'inventé ni de déformé**.
+- Ensuite : 2ᵉ scénario Make « Production » (tableau → photos du dossier Drive → fal.ai → vidéos rangées dans le dossier → ligne « À vérifier » → e-mail à Maceo).
+  Au début, Maceo dépose lui-même les photos du client dans son dossier Drive.
+- Clé API fal.ai : à créer au moment de construire le scénario, à coller **uniquement dans Make**.
+
 ### Prochaines étapes
 1. **Déclenchement de la production** : un 2ᵉ scénario surveille le tableau ; quand Maceo passe « Acompte reçu » à « Oui »
    (en attendant Stripe, qui nécessite le SIRET), il lance la production.
