@@ -19,7 +19,7 @@
   <meta property="og:title" content="Studio Tourisme | Des annonces qui se louent mieux, à partir de vos photos actuelles">
   <meta property="og:description" content="Vidéo IA, retouche photo et réécriture de votre annonce Airbnb, Booking ou Abritel. 100 % à distance. Audit gratuit sous 24 h.">
   <meta property="og:url" content="https://VOTRE-DOMAINE.fr/">
-  <meta property="og:image" content="https://VOTRE-DOMAINE.fr/assets/img/og-image.png">
+  <meta property="og:image" content="https://VOTRE-DOMAINE.fr/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Studio Tourisme : vidéo IA, retouche photo et annonce optimisée pour la location courte durée">
@@ -28,9 +28,9 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <meta name="theme-color" content="#1F4FD1">
+  <meta name="theme-color" content="#0F0C0A">
 
-  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Données structurées : aucune note ni aucun avis déclaré (à ajouter uniquement avec de vrais avis) -->
@@ -61,9 +61,10 @@
 </head>
 <body>
   <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+  <div class="progression" aria-hidden="true"></div>
 
   <!-- Icônes SVG (lignes droites, réutilisées dans la page) -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
     <symbol id="i-coche" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/></symbol>
     <symbol id="i-croix" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></symbol>
     <symbol id="i-photo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"><rect x="3" y="5" width="18" height="14"/><path d="M3 16l5-5 4 4 3-3 6 6"/><rect x="15" y="8" width="2.5" height="2.5"/></g></symbol>
@@ -81,6 +82,12 @@
     <symbol id="i-lieu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
     <symbol id="i-instagram" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01" stroke-linecap="square" stroke-width="2.4"/></g></symbol>
     <symbol id="i-distance" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><rect x="2.5" y="4" width="19" height="13"/><path d="M8 21h8M12 17v4"/></g></symbol>
+    <symbol id="i-soleil" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></symbol>
+    <symbol id="i-appareil" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 8h4l2-3h6l2 3h4v11H3z"/><circle cx="12" cy="13" r="3.5"/></g></symbol>
+    <symbol id="i-niveau" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2.5" y="8" width="19" height="8" rx="2"/><path d="M10 12h4M7 8v2M17 8v2"/></g></symbol>
+    <symbol id="i-etoile" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-balai" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3l-3.5 8"/><path d="M8 11h7l2 9H5z"/><path d="M9 15v5M13 15v5"/></g></symbol>
+    <symbol id="i-canape" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/><path d="M3 12a2 2 0 0 1 4 0v2h10v-2a2 2 0 0 1 4 0v5H3z"/><path d="M5 17v2M19 17v2"/></g></symbol>
   </svg>
 
   <!-- ========== 1. EN-TÊTE ========== -->
@@ -108,10 +115,11 @@
 
     <!-- ========== 2. ACCROCHE ========== -->
     <section class="accroche" id="haut" aria-labelledby="titre-accroche">
+      <div class="aurore" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="conteneur accroche__grille">
         <div>
           <p class="section__surtitre">Location courte durée · Haute-Savoie et Savoie</p>
-          <h1 class="accroche__titre" id="titre-accroche">Des annonces qui se louent mieux, à partir de vos photos actuelles.</h1>
+          <h1 class="accroche__titre" id="titre-accroche">Des annonces qui se louent mieux, à partir de <span class="accent">vos photos actuelles.</span></h1>
           <p class="accroche__sous-titre">Nous créons une vidéo IA à partir des photos de votre annonce, nous retouchons vos photos et nous réécrivons votre texte. Tout se fait à distance : pas de tournage, pas de déplacement.</p>
           <div class="accroche__actions">
             <a class="bouton" href="#contact">Demander un audit gratuit</a>
@@ -148,6 +156,14 @@
       </div>
     </section>
 
+    <!-- Bandeau décoratif des zones couvertes (le texte figure aussi dans « Pour qui ») -->
+    <div class="bandeau" aria-hidden="true">
+      <div class="bandeau__piste">
+        <ul><li>Aravis</li><li>Le Grand-Bornand</li><li>La Clusaz</li><li>Lac d'Annecy</li><li>Aix-les-Bains</li><li>Chambéry</li><li>Haute-Savoie</li><li>Savoie</li></ul>
+        <ul><li>Aravis</li><li>Le Grand-Bornand</li><li>La Clusaz</li><li>Lac d'Annecy</li><li>Aix-les-Bains</li><li>Chambéry</li><li>Haute-Savoie</li><li>Savoie</li></ul>
+      </div>
+    </div>
+
     <!-- ========== 3. CE QUE NOUS FAISONS ========== -->
     <section class="section section--grise" id="services" aria-labelledby="titre-services">
       <div class="conteneur">
@@ -182,6 +198,84 @@
             <p class="carte__pack">Pack Premium</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ========== VOS PHOTOS (explications et conseils) ========== -->
+    <section class="section" id="photos" aria-labelledby="titre-photos">
+      <div class="conteneur">
+        <div class="section__entete">
+          <p class="section__surtitre">Vos photos</p>
+          <h2 id="titre-photos">Ce qui fait une photo d'annonce qui donne envie</h2>
+          <p class="section__intro">Sur une plateforme, le voyageur décide en quelques secondes s'il ouvre votre annonce ou passe à la suivante. Vos photos font ce premier tri. Voici ce que nous corrigeons, et ce que vous pouvez préparer de votre côté.</p>
+        </div>
+
+        <div class="grille-2">
+          <article class="profil photos__colonne">
+            <div class="profil__entete">
+              <span class="carte__icone" aria-hidden="true"><svg width="26" height="26"><use href="#i-photo"/></svg></span>
+              <h3>Ce que nous améliorons</h3>
+            </div>
+            <ul class="liste-coches">
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#i-coche"/></svg><span><strong>Lumière et exposition :</strong> des pièces claires, sans coins sombres.</span></li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#i-coche"/></svg><span><strong>Netteté et lignes droites :</strong> murs, portes et cadres bien d'aplomb.</span></li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#i-coche"/></svg><span><strong>Cadrage :</strong> des angles larges qui montrent la profondeur de chaque pièce.</span></li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#i-coche"/></svg><span><strong>Harmonie :</strong> des tons homogènes d'une photo à l'autre.</span></li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#i-coche"/></svg><span><strong>Tri :</strong> nous écartons les photos floues, sombres ou en double.</span></li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#i-coche"/></svg><span><strong>Ordre :</strong> une visite logique, qui commence par vos pièces les plus fortes.</span></li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#i-coche"/></svg><span><strong>Format :</strong> horizontal, dans la résolution attendue par les plateformes (au moins 1024 × 683 pixels).</span></li>
+            </ul>
+          </article>
+          <article class="profil photos__colonne">
+            <div class="profil__entete">
+              <span class="carte__icone" aria-hidden="true"><svg width="26" height="26"><use href="#i-bouclier"/></svg></span>
+              <h3>Ce que nous ne faisons jamais</h3>
+            </div>
+            <ul class="liste-coches liste-coches--non">
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#i-croix"/></svg><span>Ajouter un meuble, une plante, un objet ou une décoration.</span></li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#i-croix"/></svg><span>Changer la vue, agrandir une pièce ou inventer un équipement.</span></li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#i-croix"/></svg><span>Effacer un défaut du logement.</span></li>
+              <li><svg width="16" height="16" aria-hidden="true"><use href="#i-croix"/></svg><span>Appliquer un filtre trop marqué qui donne un rendu artificiel.</span></li>
+            </ul>
+            <p class="photos__note">Un voyageur qui retrouve ce qu'il a vu en photo laisse un meilleur avis. Une photo trop retouchée crée de la méfiance, puis de la déception à l'arrivée.</p>
+          </article>
+        </div>
+
+        <h3 class="photos__titre">Vous refaites vos photos&nbsp;? Nos conseils</h3>
+        <div class="grille-3">
+          <article class="carte">
+            <span class="carte__icone" aria-hidden="true"><svg width="26" height="26"><use href="#i-balai"/></svg></span>
+            <h4>Rangez et aérez</h4>
+            <p>Retirez les objets personnels, pliez les serviettes, faites les lits. Un espace dégagé paraît plus grand.</p>
+          </article>
+          <article class="carte">
+            <span class="carte__icone" aria-hidden="true"><svg width="26" height="26"><use href="#i-soleil"/></svg></span>
+            <h4>Faites entrer la lumière</h4>
+            <p>Ouvrez rideaux et volets, allumez toutes les lampes. Photographiez de jour.</p>
+          </article>
+          <article class="carte">
+            <span class="carte__icone" aria-hidden="true"><svg width="26" height="26"><use href="#i-appareil"/></svg></span>
+            <h4>Passez en grand angle</h4>
+            <p>Sur smartphone, utilisez le mode 0,5x. Évitez le zoom numérique : il dégrade l'image.</p>
+          </article>
+          <article class="carte">
+            <span class="carte__icone" aria-hidden="true"><svg width="26" height="26"><use href="#i-niveau"/></svg></span>
+            <h4>Tenez le téléphone droit</h4>
+            <p>À l'horizontale, à hauteur de poitrine, bien vertical. Les murs restent droits sur la photo.</p>
+          </article>
+          <article class="carte">
+            <span class="carte__icone" aria-hidden="true"><svg width="26" height="26"><use href="#i-canape"/></svg></span>
+            <h4>Montrez la vie de chaque pièce</h4>
+            <p>Une table dressée, un plaid sur le canapé, un bureau dégagé : le voyageur s'y projette.</p>
+          </article>
+          <article class="carte">
+            <span class="carte__icone" aria-hidden="true"><svg width="26" height="26"><use href="#i-etoile"/></svg></span>
+            <h4>N'oubliez pas vos atouts</h4>
+            <p>Vue, cheminée, jacuzzi, local à skis, machine à café : photographiez ce qui vous distingue. Prévoyez 15 à 30 photos selon la taille du logement.</p>
+          </article>
+        </div>
+
+        <p class="encart"><strong>Les erreurs qui font passer une annonce :</strong> photos sombres ou floues, désordre visible, coins laissés dans l'ombre, photos qui ne se ressemblent pas d'une pièce à l'autre, filtres trop forts.</p>
       </div>
     </section>
 
@@ -436,6 +530,18 @@
             </div>
           </details>
           <details class="faq__item">
+            <summary>Combien de photos faut-il&nbsp;?<span class="faq__signe" aria-hidden="true"></span></summary>
+            <div class="faq__reponse">
+              <p>En général, 15 à 30 selon la taille du logement : assez pour montrer chaque pièce sous son meilleur angle, sans doublons. Le pack Essentiel comprend la retouche de 15 photos, que nous choisissons avec vous.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary>Mes photos ont été prises au téléphone, est-ce suffisant&nbsp;?<span class="faq__signe" aria-hidden="true"></span></summary>
+            <div class="faq__reponse">
+              <p>Oui, si elles sont nettes. Nous corrigeons la lumière, les couleurs et l'alignement. Si une photo est trop floue ou si une pièce manque, nous vous le disons dans l'audit, avec des conseils simples pour la refaire.</p>
+            </div>
+          </details>
+          <details class="faq__item">
             <summary>Quand est-ce que je paie&nbsp;?<span class="faq__signe" aria-hidden="true"></span></summary>
             <div class="faq__reponse">
               <p>L'audit est gratuit. Si vous passez commande, vous versez un acompte de 30&nbsp;% au démarrage. Le solde est payé à la livraison, une fois que vous avez validé le travail. Deux séries de modifications sont incluses jusqu'à votre validation.</p>
@@ -555,12 +661,19 @@
         <ul class="pied__legal">
           <li><a href="mentions-legales.html">Mentions légales</a></li>
           <li><a href="cgv.html">Conditions générales de vente</a></li>
+          <li><a href="cgu.html">Conditions générales d'utilisation</a></li>
           <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+          <li><button type="button" class="lien-bouton" data-cookies>Gérer les cookies</button></li>
         </ul>
       </div>
     </div>
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/consentement.js" defer></script>
+  <!-- Animations : GSAP (hébergé sur le site, licence standard GSAP) -->
+  <script src="assets/js/vendor/gsap.min.js" defer></script>
+  <script src="assets/js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
 </body>
 </html>
