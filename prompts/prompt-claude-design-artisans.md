@@ -75,6 +75,9 @@ En 10 lignes maximum :
 - Identité propre à chaque client : palette dérivée de son logo / camion / tenue si fournis ; sinon proposition
   justifiée par le métier (ex. paysagiste : verts naturels et terre ; électricien : contraste net, accent vif ;
   plombier : bleus et neutres chauds ; maçon : minéraux, ocres).
+- **Si le client a déjà une identité** (logo, couleurs, style photo, site existant) et demande de la garder :
+  relève-la précisément (codes couleur, polices, traitement photo, mise en page) et modernise-la sans la
+  remplacer. Une section « DIRECTION ARTISTIQUE IMPOSÉE » dans les données du client prime sur tes propositions.
 - Mobile d'abord : 70 % des visites d'artisans viennent du téléphone. Bouton « Appeler » collant en bas d'écran
   sur mobile. Aucun défilement horizontal.
 - Typographie : 2 familles maximum, corps de texte ≥ 16 px, interlignage ≥ 1,5.
